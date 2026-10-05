@@ -38,6 +38,14 @@ form :is(.grid-cols-2, .grid-cols-\[1fr_auto\]) > * { grid-template-columns: min
 form :is(.grid-cols-2, .grid-cols-\[1fr_auto\]) > :first-child > [id$="-help"] { width: 100cqw; }
 form :is(.grid-cols-2, .grid-cols-\[1fr_auto\]):has(> :nth-child(2) [id$="-help"]) > :first-child > [id$="-help"] { width: auto; }
 
+/* Même règle pour les rangées responsives (sm:grid-cols-2) des calculateurs du site : une aide de la
+   colonne de gauche s'étend sur la rangée quand le champ voisin n'a pas d'aide. */
+@media (min-width: 640px) {
+  :is(form.sm\:grid-cols-2, form .sm\:grid-cols-2) { container-type: inline-size; }
+  :is(form.sm\:grid-cols-2, form .sm\:grid-cols-2) > * { grid-template-columns: minmax(0, 1fr); }
+  :is(form.sm\:grid-cols-2, form .sm\:grid-cols-2) > :nth-child(odd):has(+ *):not(:has(+ * [id$="-help"])) > [id$="-help"] { width: 100cqw; }
+}
+
 /* §10.2 : la typographie porte le design. Titres en serif, corps en sans-serif ;
    tableaux de style journal (filet sous l'en-tete, pas de bordures verticales,
    en-tetes en petites capitales, chiffres tabulaires). */

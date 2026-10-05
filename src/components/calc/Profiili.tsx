@@ -30,7 +30,7 @@ export function KuntaKentta({ lang, id, value, onChange, help }: { lang: L; id: 
 
 export function KirkkoKentta({ lang, id, value, onChange }: { lang: L; id: string; value: Kirkko; onChange: (v: Kirkko) => void }) {
   return <Toggle id={id} label={tx(lang, 'Kirkon jäsen', 'Church member')} value={value} onChange={(v) => onChange(v as Kirkko)}
-    options={[{ value: 'ei', label: tx(lang, 'Ei', 'No') }, { value: 'evl', label: tx(lang, 'Ev.lut.', 'Lutheran') }, { value: 'ort', label: tx(lang, 'Ortod.', 'Orthodox') }]} />;
+    options={[{ value: 'ei', label: tx(lang, 'Ei', 'No') }, { value: 'evl', label: tx(lang, 'Ev.lut.', 'Luth.') }, { value: 'ort', label: tx(lang, 'Ortod.', 'Orth.') }]} />;
 }
 
 /** Lisätiedot: ikä, alaikäiset lapset, ainoa huoltaja, matkakulut. Näytetään « Lisäasetukset »-osion sisällä. */

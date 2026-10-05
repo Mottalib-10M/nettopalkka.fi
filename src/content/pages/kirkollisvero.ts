@@ -1,0 +1,125 @@
+import { definePage } from '../../lib/guide-types';
+import { P, FI, EN } from '../../lib/fmt';
+import { laskeVerot, lisaprosentti } from '../../lib/engine/vero';
+import { KUNNAT, kunta } from '../../lib/engine/params';
+
+const evlMin = Math.min(...KUNNAT.map((k) => k.evl)), evlMax = Math.max(...KUNNAT.map((k) => k.evl));
+const ortMin = Math.min(...KUNNAT.map((k) => k.ort)), ortMax = Math.max(...KUNNAT.map((k) => k.ort));
+const halvat = KUNNAT.filter((k) => k.evl === evlMin && !k.ahvenanmaa).map((k) => k.nimi);
+const kalliit = KUNNAT.filter((k) => k.evl === evlMax && !k.ahvenanmaa).map((k) => k.nimi);
+const KALLIS = kalliit[0];
+
+const TRE = kunta('Tampere');
+const T_EVL = laskeVerot({ tulo: 40000, kunta: 'Tampere', kirkko: 'evl' });
+const T_ORT = laskeVerot({ tulo: 40000, kunta: 'Tampere', kirkko: 'ort' });
+const T_EI = laskeVerot({ tulo: 40000, kunta: 'Tampere' });
+const K_EVL = laskeVerot({ tulo: 40000, kunta: KALLIS, kirkko: 'evl' });
+const H_EVL = laskeVerot({ tulo: 40000, kunta: 'Helsinki', kirkko: 'evl' });
+const PIENI = laskeVerot({ tulo: 18000, kunta: 'Tampere', kirkko: 'evl' });
+const SUURI = laskeVerot({ tulo: 80000, kunta: 'Tampere', kirkko: 'evl' });
+const PIENI_EI = laskeVerot({ tulo: 18000, kunta: 'Tampere' });
+const ELAKE = laskeVerot({ tulo: 24000, tulolaji: 'elake', kunta: 'Tampere', kirkko: 'evl' });
+const kpl = KUNNAT.length;
+const LP_EVL = lisaprosentti(T_EVL, 'evl'), LP_EI = lisaprosentti(T_EI);
+const TASOT = [20000, 30000, 40000, 60000, 80000].map((t) => ({ t, v: laskeVerot({ tulo: t, kunta: 'Tampere', kirkko: 'evl' }) }));
+const KK3000 = laskeVerot({ tulo: 36000, kunta: 'Tampere', kirkko: 'evl' });
+
+const fiLista = (a: string[]) => a.length > 1 ? `${a.slice(0, -1).join(', ')} ja ${a[a.length - 1]}` : a[0];
+const enLista = (a: string[]) => a.length > 1 ? `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}` : a[0];
+
+export default definePage({
+  id: 'kirkollisvero',
+  group: 'vero',
+  order: 70,
+  mini: 'kirkko',
+  related: ['kuntavertailu', 'veroprosenttilaskuri', 'yle-vero', 'helsinki'],
+  sources: ['vero_kunnat', 'vero_ennakonpidatys'],
+  fi: {
+    slug: 'kirkollisvero',
+    nav: 'Kirkollisvero',
+    card: 'Seurakuntien veroprosentit 2026, kirkollisvero euroina ja eroamisen vaikutus verokorttiin.',
+    title: 'Kirkollisvero 2026: seurakuntien veroprosentit ja eroaminen',
+    description: `Kirkollisvero 2026 on evankelisluterilaisilla ${FI.num(evlMin, 2)}–${FI.p(evlMax)} ja ortodokseilla ${FI.num(ortMin, 2)}–${FI.p(ortMax)} verotettavasta tulosta. Katso oman kuntasi prosentti ja vero euroina.`,
+    h1: 'Kirkollisvero ja seurakuntien veroprosentit',
+    intro: 'Kirkollisveroa maksavat vain evankelisluterilaisen tai ortodoksisen kirkon jäsenet, ja prosentin päättää oma seurakunta.',
+    resume: `Kirkollisvero on vuonna 2026 evankelisluterilaisen kirkon jäsenelle ${FI.num(evlMin, 2)}–${FI.p(evlMax)} ja ortodoksisen kirkon jäsenelle ${FI.num(ortMin, 2)}–${FI.p(ortMax)} kunnallisverotuksessa verotettavasta tulosta. Tampereella ${FI.eur(40000)} vuodessa ansaitseva luterilainen maksaa kirkollisveroa ${FI.eur(T_EVL.kirkollisvero)} vuodessa eli noin ${FI.eur(T_EVL.kirkollisvero / 12)} kuukaudessa, koska Tampereen seurakuntien prosentti on ${FI.p(TRE.evl)}. Ortodoksina sama henkilö maksaisi ${FI.eur(T_ORT.kirkollisvero)}, sillä ortodoksisen seurakunnan prosentti on Tampereella ${FI.p(TRE.ort)}. Veron pohja on täsmälleen sama kuin kunnallisverossa: puhtaasta ansiotulosta vähennetään työntekijän maksut ja perusvähennys, ja jäljelle jäävästä summasta lasketaan sekä kunnan että seurakunnan osuus. Kirkkoon kuulumaton ei maksa kirkollisveroa lainkaan, eikä sitä peritä pääomatuloista. Verokortin prosenttiin jäsenyys vaikuttaa selvästi: ${FI.eur(40000)} palkalla Tampereella veroprosentti on kirkon jäsenelle ${FI.num(T_EVL.veroprosentti, 1)} % ja muille ${FI.num(T_EI.veroprosentti, 1)} %. Halvimmat luterilaiset seurakunnat löytyvät pääkaupunkiseudulta, kalleimmat pieniltä paikkakunnilta, joten muutto voi muuttaa summaa enemmän kuin palkankorotus. Kirkollisvero ei ole vähennyskelpoinen, ja jokainen maksaa sitä vain omista tuloistaan.`,
+    faqs: [
+      { q: 'Paljonko kirkosta eroaminen säästää vuodessa?', a: `Säästö on oman seurakunnan prosentti kerrottuna verotettavalla tulolla. Tampereella ${FI.eur(40000)} palkalla se tekee ${FI.eur(T_EVL.kirkollisvero)} vuodessa, mutta kalleimmissa, ${FI.p(evlMax)} perivissä seurakunnissa (esimerkiksi ${KALLIS}) samalla palkalla ${FI.eur(K_EVL.kirkollisvero)}. Pienituloisella säästö jää pieneksi, koska työtulovähennys ja perusvähennys syövät jo valmiiksi osan kirkollisverosta.` },
+      { q: 'Maksetaanko kirkollisveroa eläkkeestä ja Kelan etuuksista?', a: `Maksetaan, jos olet kirkon jäsen. Kirkollisvero lasketaan kaikesta ansiotulosta, myös eläkkeestä, työttömyysetuudesta ja vanhempainrahasta. Tampereella ${FI.eur(24000)} vuodessa eläkettä saava luterilainen maksaa kirkollisveroa ${FI.eur(ELAKE.kirkollisvero)}, koska eläketulovähennys pienentää verotettavaa tuloa ennen kuin seurakunnan ${FI.p(TRE.evl)} lasketaan. Pääomatuloista, kuten osingoista tai vuokrista, kirkollisveroa ei peritä.` },
+      { q: 'Miksi helsinkiläinen maksaa vähemmän kirkollisveroa kuin maaseudulla?', a: `Jokainen seurakuntayhtymä päättää prosenttinsa itse sen mukaan, paljonko rahaa se tarvitsee ja montako veronmaksajaa sillä on. ${fiLista(halvat)} ovat ${FI.p(evlMin)} tasolla, mikä on Manner-Suomen matalin. ${FI.eur(40000)} palkalla helsinkiläinen jäsen maksaa ${FI.eur(H_EVL.kirkollisvero)}, kun ${FI.p(evlMax)} seurakunnassa summa on ${FI.eur(K_EVL.kirkollisvero)}.` },
+      { q: 'Muuttuuko verokorttini itsestään, kun eroan kirkosta?', a: `Jäsenyystieto siirtyy Verohallinnolle kirkon jäsenrekisteristä, mutta jo pidätettyä veroa ei korjata palkanmaksussa. Lopullinen kirkollisvero ratkeaa vuoden verotuksessa jäsenyystietojen perusteella, ja seuraavan vuoden verokortissa prosentti on laskettu ilman seurakunnan osuutta. ${FI.eur(40000)} palkalla Tampereella ero näkyy verokortissa ${FI.num(T_EVL.veroprosentti - T_EI.veroprosentti, 1)} prosenttiyksikön pudotuksena.` },
+      { q: 'Paljonko kirkollisveroa menee 3000 euron kuukausipalkasta?', a: `Tampereella ${FI.eur(3000)} kuukausipalkasta eli ${FI.eur(36000)} vuosipalkasta kirkollisveroa kertyy ${FI.eur(KK3000.kirkollisvero)} vuodessa, mikä tekee noin ${FI.eur(KK3000.kirkollisvero / 12)} kuukaudessa. Laskelmassa ei ole lomarahaa; jos sinulle maksetaan lomarahaa, se kasvattaa verotettavaa tuloa ja siten myös seurakunnan osuutta. Helsingissä, jossa prosentti on ${FI.p(kunta('Helsinki').evl)}, summa olisi pienempi.` },
+      { q: 'Voiko kirkollisveron vähentää verotuksessa?', a: `Ei voi. Kirkollisvero on itse vero, ei tulonhankkimiskulu, eikä sitä vähennetä mistään muusta verosta. Sama koskee kunnallisveroa ja valtionveroa. Vähennyskelpoisia ovat sen sijaan esimerkiksi työeläkemaksu ${FI.p(P.vero.tyoelakemaksu_prosentti)} ja työttömyysvakuutusmaksu ${FI.p(P.vero.tyottomyysvakuutusmaksu_prosentti)}, jotka pienentävät myös kirkollisveron pohjaa ennen seurakunnan prosentin soveltamista.` },
+      { q: 'Lasketaanko kirkollisvero bruttopalkasta vai verotettavasta tulosta?', a: `Verotettavasta tulosta. Tampereella ${FI.eur(40000)} bruttopalkasta jää vähennysten jälkeen verotettavaksi ${FI.eur(T_EVL.verotettava)}, ja seurakunnan ${FI.p(TRE.evl)} lasketaan tästä. Jos työtulovähennys on suurempi kuin valtionvero, ylimenevä osa vähennetään kunnallisverosta, kirkollisverosta ja sairaanhoitomaksusta niiden suhteessa, joten pienellä palkalla kirkollisvero voi pienentyä lähes nollaan.` },
+    ],
+    body: (h) => `
+<h2>Kaksi kirkkoa, ${h.num(kpl)} kuntaa, yksi verotettava tulo</h2>
+<p>Verohallinto kerää kirkollisveroa kahden kirkon puolesta: evankelisluterilaisen ja ortodoksisen. Muut uskonnolliset yhdyskunnat eivät saa verotusoikeutta, joten niiden jäsenet eivät maksa kirkollisveroa verokortin kautta. Kunkin seurakunnan tai seurakuntayhtymän veroprosentti julkaistaan samassa Verohallinnon päätöksessä kuin kuntien tuloveroprosentit, ja ne on koottu kunnittain ${h.src('vero_kunnat', 'Verohallinnon vuoden 2026 taulukkoon')}.</p>
+<p>Evankelisluterilaisten seurakuntien prosentit vaihtelevat vuonna 2026 ${h.num(evlMin, 2)} prosentista ${h.num(evlMax, 2)} prosenttiin. Ortodoksisia seurakuntia on vähemmän, ja niiden alue kattaa useita kuntia; prosentti on ${h.num(ortMin, 2)}–${h.num(ortMax, 2)} %. Siksi ortodoksi maksaa lähes aina enemmän kuin luterilainen samassa kunnassa.</p>
+${h.table(['Kunta', 'Ev.lut. %', 'Ev.lut. vero', 'Ortodoksinen %', 'Ortodoksinen vero'], [
+  ['Helsinki', h.num(kunta('Helsinki').evl, 2), h.eur(H_EVL.kirkollisvero), h.num(kunta('Helsinki').ort, 2), h.eur(laskeVerot({ tulo: 40000, kunta: 'Helsinki', kirkko: 'ort' }).kirkollisvero)],
+  ['Tampere', h.num(TRE.evl, 2), h.eur(T_EVL.kirkollisvero), h.num(TRE.ort, 2), h.eur(T_ORT.kirkollisvero)],
+  ['Oulu', h.num(kunta('Oulu').evl, 2), h.eur(laskeVerot({ tulo: 40000, kunta: 'Oulu', kirkko: 'evl' }).kirkollisvero), h.num(kunta('Oulu').ort, 2), h.eur(laskeVerot({ tulo: 40000, kunta: 'Oulu', kirkko: 'ort' }).kirkollisvero)],
+  ['Kuopio', h.num(kunta('Kuopio').evl, 2), h.eur(laskeVerot({ tulo: 40000, kunta: 'Kuopio', kirkko: 'evl' }).kirkollisvero), h.num(kunta('Kuopio').ort, 2), h.eur(laskeVerot({ tulo: 40000, kunta: 'Kuopio', kirkko: 'ort' }).kirkollisvero)],
+  [KALLIS, h.num(kunta(KALLIS).evl, 2), h.eur(K_EVL.kirkollisvero), h.num(kunta(KALLIS).ort, 2), h.eur(laskeVerot({ tulo: 40000, kunta: KALLIS, kirkko: 'ort' }).kirkollisvero)],
+], `Kirkollisvero vuodessa ${h.eur(40000)} palkasta, vuosi 2026`, ['l', 'r', 'r', 'r', 'r'])}
+<p>Taulukon euromäärät on laskettu samalla moottorilla kuin sivuston ${h.a('veroprosenttilaskuri', 'veroprosenttilaskuri')}. Huomaa, että verotettava tulo on kaikissa kunnissa sama, ${h.eur(T_EVL.verotettava)}: vain seurakunnan prosentti vaihtuu. Kunnallisveron erot näet ${h.a('kuntavertailu', 'kuntavertailusta')}, ja ne ovat euroissa moninkertaiset kirkollisveroon verrattuna.</p>
+<h2>Mistä summasta seurakunnan osuus lasketaan</h2>
+<p>Kirkollisveron pohja muodostetaan kunnallisverotuksen säännöillä. Palkasta vähennetään ensin tulonhankkimisvähennys ${h.eur(h.P.vero.tulonhankkimisvahennys)} ja mahdolliset työmatkakulut, sitten työeläkemaksu, työttömyysvakuutusmaksu ja päivärahamaksu ja lopuksi perusvähennys. Tähän verotettavaan tuloon sovelletaan rinnakkain kunnan ja seurakunnan prosenttia sekä sairaanhoitomaksua.</p>
+<p>Työtulovähennys tekee pienituloisen kirkollisverosta yllättävän pienen. Vähennys tehdään ensin valtionverosta, ja jos valtionveroa ei ole tarpeeksi, ylijäämä jaetaan kunnallisveron, kirkollisveron ja sairaanhoitomaksun kesken. Tampereella ${h.eur(18000)} vuodessa tienaava luterilainen maksaa siksi kirkollisveroa vain ${h.eur(PIENI.kirkollisvero)}, ja hänen kokonaisveronsa on ${h.eur(PIENI.verot)} jäsenenä ja ${h.eur(PIENI_EI.verot)} ilman jäsenyyttä. Suurituloisella vähennystä ei jää jaettavaksi: ${h.eur(80000)} palkasta kirkollisvero on Tampereella ${h.eur(SUURI.kirkollisvero)}.</p>
+<h2>Kirkollisvero eri tulotasoilla</h2>
+<p>Koska työtulovähennys ja perusvähennys painavat eniten pienillä tuloilla, kirkollisveron osuus bruttopalkasta kasvaa tulojen mukana, vaikka seurakunnan prosentti pysyy samana. Alla oleva laskelma on tehty Tampereen luterilaiselle palkansaajalle, jolla ei ole lapsia eikä muita vähennyksiä.</p>
+${h.table(['Vuosipalkka', 'Verotettava tulo', 'Kirkollisvero', 'Osuus palkasta'], TASOT.map(({ t, v }) => [h.eur(t), h.eur(v.verotettava), h.eur(v.kirkollisvero), h.pct(v.kirkollisvero / t, 2)]), 'Tampere, ev.lut., vuosi 2026', ['l', 'r', 'r', 'r'])}
+<p>Pienimmällä tulotasolla kirkollisvero on lähes olematon, vaikka verotettavaa tuloa on yli kymmenentuhatta euroa. Syy on työtulovähennyksen ylijäämä, joka kohdistuu suhteellisesti myös seurakunnan osuuteen. Ylimmällä tasolla kirkollisvero lähestyy seurakunnan nimellistä prosenttia, koska perusvähennys on poistunut kokonaan ja työtulovähennys riittää kattamaan vain osan valtionverosta. Jokainen puoliso verotetaan Suomessa erikseen, joten perheessä, jossa vain toinen kuuluu kirkkoon, kirkollisveroa maksaa vain jäsen omista tuloistaan.</p>
+<h2>Kirkollisvero verokortissa</h2>
+<p>Verokortissa ei ole erillistä riviä kirkollisverolle. Se sisältyy veroprosenttiin ja lisäprosenttiin, jotka Verohallinto laskee ${h.src('vero_ennakonpidatys', 'ennakonpidätyksen laskentaperusteiden')} mukaan. Kun prosentti pyöristetään ylöspäin puolen prosenttiyksikön tarkkuudella, jäsenyys voi nostaa verokortin prosenttia enemmän kuin seurakunnan oma prosentti antaisi odottaa. Tampereella ${h.eur(40000)} palkalla luterilaisen verokortissa lukee ${h.num(T_EVL.veroprosentti, 1)} % ja kirkkoon kuulumattoman ${h.num(T_EI.veroprosentti, 1)} %, vaikka kirkollisveron todellinen osuus palkasta on ${h.pct(T_EVL.kirkollisvero / 40000, 2)}. Ero tasoittuu verotuksessa: liika pidätys palautuu.</p>
+<p>Lisäprosentissa seurakunnan prosentti on mukana sellaisenaan. Jos tulosi ylittävät verokortin tulorajan, jokaisesta ylimenevästä eurosta pidätetään myös seurakunnan osuus. Tampereella ${h.eur(40000)} tulorajalla jäsenen lisäprosentti on ${h.num(LP_EVL, 1)} % ja kirkkoon kuulumattoman ${h.num(LP_EI, 1)} %. Esimerkiksi ${h.eur(2000)} bonuksesta, joka ylittää tulorajan, jäsenen palkasta pidätetään ${h.eur(2000 * LP_EVL / 100)} ja muiden ${h.eur(2000 * LP_EI / 100)}. Pidätysten ero, ${h.eur(2000 * (LP_EVL - LP_EI) / 100)}, ei vastaa tarkasti seurakunnan osuutta, koska lisäprosentti pyöristetään puoleen prosenttiyksikköön; lopullinen kirkollisvero lasketaan verotuksessa koko vuoden tuloista.</p>
+<p>Ortodoksin verokortti lasketaan samalla tavalla, vain korkeammalla seurakunnan prosentilla. Tampereella ${h.eur(40000)} palkalla ortodoksin veroprosentti on ${h.num(T_ORT.veroprosentti, 1)} %. Jos verokorttisi prosentti on laskettu väärän kirkon tai puuttuvan jäsenyyden mukaan, lopullinen kirkollisvero korjautuu verotuksessa jäsenrekisterin tietojen perusteella.</p>
+<h2>Muutto toiseen kuntaan ja kirkosta eroaminen</h2>
+<p>Kirkollisvero määräytyy samasta kotikunnasta kuin kunnallisvero. Kun muutat, uuden seurakunnan prosentti tulee käyttöön samaan aikaan kuin uuden kunnan veroprosentti, eikä erillistä ilmoitusta tarvita. Muuttaja huomaa usein, että kunnan ja seurakunnan prosentit liikkuvat eri suuntiin: ${h.a('helsinki', 'Helsingissä')} molemmat ovat matalia, kun taas monessa pienessä kunnassa kumpikin on korkea.</p>
+<p>Eroaminen tehdään kirkolle, ei Verohallinnolle. Verohallinto saa tiedon jäsenrekisteristä, ja lopullinen kirkollisvero ratkaistaan vuoden verotuksessa. Palkanmaksun aikana jo pidätettyä veroa ei korjata takautuvasti, joten mahdollinen hyöty näkyy veronpalautuksessa tai seuraavan vuoden verokortissa. Eroamista pohtivan kannattaa laskea euromäärä omalla tulollaan: kuukausitasolla kyse on usein muutamasta kympistä, ei sadoista euroista.</p>
+<h2>Ahvenanmaa ja ulkomailla asuvat</h2>
+<p>Ahvenanmaan seurakunnat perivät kirkollisveroa samalla tavalla kuin mantereella, ja osa niistä kuuluu kalleimpiin: monessa saaristokunnassa prosentti on ${h.num(evlMax, 2)} tai lähellä sitä. Ulkomailla asuva rajoitetusti verovelvollinen ei maksa kirkollisveroa, koska hänen palkastaan peritään lähdeveroa tai kiinteä kunnallisvero ${h.num(h.P.vero.rajoitetusti_verovelvollisen_kunnallisvero, 2)} %, eikä sen päälle tule seurakunnan osuutta.</p>`,
+  },
+  en: {
+    slug: 'church-tax',
+    nav: 'Church tax',
+    card: 'Parish tax rates for 2026, church tax in euros and what leaving the church changes on your tax card.',
+    title: 'Church tax Finland 2026: parish rates and what leaving saves',
+    description: `Finnish church tax 2026: Lutheran parishes charge ${EN.num(evlMin, 2)} to ${EN.p(evlMax)}, Orthodox ${EN.num(ortMin, 2)} to ${EN.p(ortMax)} of taxable income. Check your own parish rate and your tax card.`,
+    h1: 'Church tax in Finland',
+    intro: 'Only members of the Lutheran or Orthodox Church pay church tax (kirkollisvero), and each parish sets its own rate.',
+    resume: `Finnish church tax (kirkollisvero) in 2026 is ${EN.num(evlMin, 2)}% to ${EN.p(evlMax)} of taxable income for members of the Evangelical Lutheran Church and ${EN.num(ortMin, 2)}% to ${EN.p(ortMax)} for members of the Orthodox Church. A Lutheran earning ${EN.eur(40000)} a year in Tampere pays ${EN.eur(T_EVL.kirkollisvero)} a year, roughly ${EN.eur(T_EVL.kirkollisvero / 12)} a month, because the Tampere parishes charge ${EN.p(TRE.evl)}. As an Orthodox member the same person would pay ${EN.eur(T_ORT.kirkollisvero)} at ${EN.p(TRE.ort)}. If you moved to Finland and never joined either church, you pay nothing: membership is never assumed, and other faiths cannot levy tax through Vero. The base is the same figure used for municipal tax, after work expenses, employee contributions and the basic deduction. Capital income such as dividends or rent is not subject to church tax. On the tax card the difference is visible: at ${EN.eur(40000)} in Tampere a member’s withholding rate is ${EN.num(T_EVL.veroprosentti, 1)}% against ${EN.num(T_EI.veroprosentti, 1)}% for a non-member.`,
+    faqs: [
+      { q: 'Do I pay church tax in Finland if I am not a member?', a: `No. Church tax is charged only to members of the Evangelical Lutheran Church or the Orthodox Church of Finland. Moving to Finland does not make you a member, and other religious communities do not collect tax through Vero. A non-member in Tampere on ${EN.eur(40000)} has a withholding rate of ${EN.num(T_EI.veroprosentti, 1)}%, against ${EN.num(T_EVL.veroprosentti, 1)}% for a Lutheran on the same pay.` },
+      { q: 'How much church tax would I save by leaving the Lutheran church?', a: `Exactly your parish rate times your taxable income. In Tampere, ${EN.eur(40000)} of salary gives ${EN.eur(T_EVL.kirkollisvero)} a year; in a ${EN.p(evlMax)} parish such as ${KALLIS} it is ${EN.eur(K_EVL.kirkollisvero)}. On low pay the saving shrinks, because the earned income credit already wipes out part of the church tax once state tax is used up.` },
+      { q: 'Why is church tax lowest in the Helsinki region?', a: `Each parish union sets its rate according to its budget and its number of taxpayers. ${enLista(halvat)} share the lowest mainland rate of ${EN.p(evlMin)}, while ${kalliit.length} mainland municipalities sit at ${EN.p(evlMax)}. On ${EN.eur(40000)}, that is ${EN.eur(H_EVL.kirkollisvero)} a year in Helsinki against ${EN.eur(K_EVL.kirkollisvero)} in the dearest parishes.` },
+      { q: 'My spouse is Lutheran and I am not: who pays church tax?', a: `Only your spouse, and only on their own income. Finland taxes each person separately, so membership is never shared within a household. If your spouse earns ${EN.eur(36000)} in Tampere, their church tax is ${EN.eur(KK3000.kirkollisvero)} a year at ${EN.p(TRE.evl)}; your own card carries no parish share at all, whatever your salary.` },
+      { q: 'Is church tax charged on my pension or unemployment benefit?', a: `Yes, if you are a member. Church tax applies to all earned income, including pensions, unemployment benefits and parental allowance. A Lutheran in Tampere with a ${EN.eur(24000)} annual pension pays ${EN.eur(ELAKE.kirkollisvero)}, after the pension income deduction lowers taxable income. Capital income is never subject to church tax.` },
+    ],
+    body: (h) => `
+<h2>Who pays and how much</h2>
+<p>Vero collects church tax on behalf of two churches only: the Evangelical Lutheran Church and the Orthodox Church of Finland. If you belong to neither, the line simply does not exist for you. Many newcomers notice it only when a Finnish colleague with the same salary turns out to have a higher withholding rate on their tax card (verokortti). Rates for every parish are published together with municipal rates in ${h.src('vero_kunnat', 'Vero’s 2026 decision')}.</p>
+<p>Lutheran parishes charge between ${h.num(evlMin, 2)}% and ${h.num(evlMax, 2)}% in 2026. Orthodox parishes cover wider areas and charge ${h.num(ortMin, 2)}% to ${h.num(ortMax, 2)}%, so in most towns an Orthodox member pays more than a Lutheran neighbour.</p>
+${h.table(['Municipality', 'Lutheran rate', 'Lutheran tax', 'Orthodox rate', 'Orthodox tax'], [
+  ['Helsinki', `${h.num(kunta('Helsinki').evl, 2)}%`, h.eur(H_EVL.kirkollisvero), `${h.num(kunta('Helsinki').ort, 2)}%`, h.eur(laskeVerot({ tulo: 40000, kunta: 'Helsinki', kirkko: 'ort' }).kirkollisvero)],
+  ['Tampere', `${h.num(TRE.evl, 2)}%`, h.eur(T_EVL.kirkollisvero), `${h.num(TRE.ort, 2)}%`, h.eur(T_ORT.kirkollisvero)],
+  ['Oulu', `${h.num(kunta('Oulu').evl, 2)}%`, h.eur(laskeVerot({ tulo: 40000, kunta: 'Oulu', kirkko: 'evl' }).kirkollisvero), `${h.num(kunta('Oulu').ort, 2)}%`, h.eur(laskeVerot({ tulo: 40000, kunta: 'Oulu', kirkko: 'ort' }).kirkollisvero)],
+  ['Kuopio', `${h.num(kunta('Kuopio').evl, 2)}%`, h.eur(laskeVerot({ tulo: 40000, kunta: 'Kuopio', kirkko: 'evl' }).kirkollisvero), `${h.num(kunta('Kuopio').ort, 2)}%`, h.eur(laskeVerot({ tulo: 40000, kunta: 'Kuopio', kirkko: 'ort' }).kirkollisvero)],
+  [KALLIS, `${h.num(kunta(KALLIS).evl, 2)}%`, h.eur(K_EVL.kirkollisvero), `${h.num(kunta(KALLIS).ort, 2)}%`, h.eur(laskeVerot({ tulo: 40000, kunta: KALLIS, kirkko: 'ort' }).kirkollisvero)],
+], `Annual church tax on ${h.eur(40000)} of salary, 2026`, ['l', 'r', 'r', 'r', 'r'])}
+<p>Taxable income is ${h.eur(T_EVL.verotettava)} in every row; only the parish rate changes. The gap is small next to municipal tax, which you can compare in the ${h.a('kuntavertailu', 'municipal tax rate table')}.</p>
+<h2>The base: municipal taxable income</h2>
+<p>Church tax is levied on exactly the same base as municipal tax (kunnallisvero). Starting from gross pay, Vero subtracts the automatic ${h.eur(h.P.vero.tulonhankkimisvahennys)} work-expense deduction and any commuting costs, then your pension, unemployment and daily allowance contributions, and finally the basic deduction (perusvähennys). The municipal rate, the parish rate and the health care contribution are all applied to what remains.</p>
+<p>The earned income tax credit (työtulovähennys) makes church tax small on modest pay. The credit comes off state tax first; when state tax runs out, the rest is shared pro rata between municipal tax, church tax and the health care contribution. A Lutheran in Tampere on ${h.eur(18000)} therefore pays only ${h.eur(PIENI.kirkollisvero)} of church tax and ${h.eur(PIENI.verot)} of tax in total, against ${h.eur(PIENI_EI.verot)} as a non-member. At ${h.eur(80000)} nothing is left of the credit to share, and church tax reaches ${h.eur(SUURI.kirkollisvero)}.</p>
+<h2>Church tax at different salaries</h2>
+<p>The parish rate is flat, but the share of gross pay it takes is not. The basic deduction and the earned income credit weigh most on small incomes, so church tax barely registers at the bottom and edges towards the nominal rate at the top. The table assumes a Lutheran employee in Tampere with no children and no other deductions.</p>
+${h.table(['Annual salary', 'Taxable income', 'Church tax', 'Share of pay'], TASOT.map(({ t, v }) => [h.eur(t), h.eur(v.verotettava), h.eur(v.kirkollisvero), h.pct(v.kirkollisvero / t, 2)]), 'Tampere, Lutheran, 2026', ['l', 'r', 'r', 'r'])}
+<h2>How it shows on your tax card</h2>
+<p>There is no separate church line on the card. Church tax is built into the withholding rate and the additional rate, worked out under ${h.src('vero_ennakonpidatys', 'Vero’s 2026 withholding rules')}. Because the rate is rounded up to the next half point, membership can move your card by more than the parish rate itself: in Tampere on ${h.eur(40000)} the card reads ${h.num(T_EVL.veroprosentti, 1)}% for a member and ${h.num(T_EI.veroprosentti, 1)}% for a non-member, while church tax is really ${h.pct(T_EVL.kirkollisvero / 40000, 2)} of pay. Any excess comes back after the annual assessment. The ${h.a('veroprosenttilaskuri', 'tax rate calculator')} lets you switch membership on and off to see the effect.</p>
+<h2>Moving, joining and leaving</h2>
+<p>Your parish follows your home municipality, so a move changes both rates at once without any separate notice. Joining or leaving is done with the church, not with Vero; the tax authority receives membership data from the church register. Tax already withheld from your pay is not corrected month by month, so the effect of leaving appears in the final assessment and on your next tax card. If you are weighing it up, put your own salary into the calculator above: the monthly amount is often closer to a dinner out than to a rent payment.</p>
+<h2>Åland and non-residents</h2>
+<p>Parishes in Åland levy church tax the same way, and several island municipalities are at ${h.num(evlMax, 2)}% or close to it. If you live abroad and are taxed as a non-resident, no church tax is added: your Finnish pay bears source tax or a flat municipal rate of ${h.num(h.P.vero.rajoitetusti_verovelvollisen_kunnallisvero, 2)}% instead. Åland also replaces the Yle tax with its own media fee, explained on the ${h.a('yle-vero', 'Yle tax')} page.</p>`,
+  },
+});
