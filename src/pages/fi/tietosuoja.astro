@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LAST_UPDATED, LEGAL, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fi';
+---
+<PageLayout title="Tietosuojaseloste: mitä tietoja laskurit käsittelevät ja miksi" description="Laskurit Suomi ei käsittele syöttämiäsi tietoja: vain palveluntarjoajan lokit. Käsittelyperusteet, säilytys, oikeutesi tietosuoja-asetuksen mukaan ja valitusoikeus." lang={lang} noindex={true} breadcrumbs={[{ label: 'Tietosuoja' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Tietosuojaseloste</h1>
+    <p>Tämä seloste kertoo henkilötietojen käsittelystä sivustolla {SITE_URL} EU:n yleisen tietosuoja-asetuksen (GDPR) 13 ja 14 artiklan mukaisesti.</p>
+    <h2>1. Rekisterinpitäjä</h2>
+    <LegalIdentity lang={lang} />
+    <p>Yhteys: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Tietosuojavastaavaa ei ole nimetty, koska 37 artiklan edellytykset eivät täyty.</p>
+    <h2>2. Mitä laskurit eivät tee</h2>
+    <p>Palkka, kotikunta, lasten määrä, eläke, vuokra ja kaikki muut syötteet käsitellään vain selaimessasi. Niitä ei lähetetä palvelimelle, ei tallenneta eikä yhdistetä mihinkään tunnisteeseen. Jakolinkki sisältää syötteesi osoiterivillä: jaa se vain niille, joille haluat.</p>
+    <h2>3. Käsittely</h2>
+    <h3>Palvelimen lokit</h3><p>Ylläpitäjä tallentaa IP-osoitteen, ajan, pyydetyn sivun, selaimen ja viittaavan sivun. Tarkoitus: tietoturva ja vianetsintä. Peruste: oikeutettu etu (6 artiklan 1 kohdan f alakohta). Säilytys ylläpitäjän (GitHub) käytännön mukaan.</p>
+    <h3>Kävijämittaus ja mainonta</h3><p>Sivusto ei tällä hetkellä lataa kävijämittausta eikä mainoksia. Jos niitä lisätään, ne latautuvat vasta suostumuksesi jälkeen, ja tämä seloste päivitetään.</p>
+    <h3>Sähköposti</h3><p>Jos kirjoitat meille, käsittelemme osoitettasi ja viestiäsi vastataksemme. Peruste: oikeutettu etu. Säilytys: kolme vuotta viimeisestä viestistä.</p>
+    <h2>4. Vastaanottajat</h2><p>Tietoja ei luovuteta eikä myydä. Lokeihin pääsee vain ylläpitäjä henkilötietojen käsittelijänä (28 artikla).</p>
+    <h2>5. Siirrot EU:n ulkopuolelle</h2><p>Ylläpitäjä GitHub, Inc. toimii Yhdysvalloissa; lokeja voidaan käsitellä siellä EU–Yhdysvallat-tietosuojakehyksen ja Euroopan komission vakiolausekkeiden perusteella.</p>
+    <h2>6. Oikeutesi</h2><p>Oikeus saada pääsy tietoihin, oikaisuun, poistamiseen, käsittelyn rajoittamiseen, vastustamiseen ja siirtämiseen (15–21 artikla): kirjoita osoitteeseen <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, vastaamme kuukauden kuluessa. Voit tehdä valituksen johtavalle valvontaviranomaiselle ({LEGAL.supervisoryAuthority}, <a href={LEGAL.supervisoryAuthorityUrl} rel="nofollow noopener" target="_blank">{LEGAL.supervisoryAuthorityUrl}</a>) tai Suomessa <a href="https://tietosuoja.fi" rel="nofollow noopener" target="_blank">tietosuojavaltuutetun toimistolle</a> (77 artikla).</p>
+    <h2>7. Ei automaattisia päätöksiä</h2><p>Laskelma on pyynnöstäsi tehty arvio ilman oikeusvaikutuksia, ei 22 artiklan tarkoittama automaattinen päätös.</p>
+    <p>Katso myös <a href={route('cookies', lang)}>evästeet</a>. Päivitetty {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

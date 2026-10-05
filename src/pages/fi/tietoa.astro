@@ -1,0 +1,29 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { YEAR, LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { KUNTIA, VERO_ESIMERKKEJA } from '../../lib/esimerkit';
+const lang = 'fi';
+---
+<PageLayout title="Radif Partners: kuka laskurit tekee ja miten ne tarkistetaan" description="Laskurit Suomi -sivuston julkaisee Radif Partners: vuoden 2026 palkka-, vero-, eläke- ja Kela-laskurit, tarkistettu Verohallinnon ja Kelan esimerkeistä." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Etusivu', path: route('home', lang) }, { name: 'Tietoa sivustosta', path: route('about', lang) }])]} breadcrumbs={[{ label: 'Tietoa sivustosta' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Tietoa {SITE_NAMES.fi} -sivustosta</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>Sivuston julkaisee Radif Partners, riippumaton julkaisija, joka tekee palkka-, vero- ja etuuslaskureita eri maihin. Suomeen teimme laskurit, joita itse kaipasimme: sellaiset, jotka vastaavat kysymykseen "paljonko minulle jää" eivätkä pelkästään kerro veroprosenttia.</p>
+    <h2>Miksi tämä sivusto laskee tarkemmin</h2>
+    <p>Verohallinnon veroprosenttilaskuri antaa prosentin, ei nettopalkkaa. Moni yksityinen palkkalaskuri taas pyytää syöttämään veroprosentin itse tai käyttää koko maan keskimääräistä kunnallisveroa, vaikka ero matalimman ja korkeimman kunnan välillä on noin kuusi prosenttiyksikköä. Me laskemme nettopalkan vuoden 2026 valtion veroasteikolla, kaikkien {KUNTIA} kunnan ja niiden seurakuntien omilla prosenteilla sekä vuoden 2026 työeläke-, työttömyys- ja sairausvakuutusmaksuilla. Samassa paikassa ovat eläke (työeläke, kansaneläke ja takuueläke verojen jälkeen) ja Kelan tuet, suomeksi ja englanniksi.</p>
+    <h2>Miten tarkistamme</h2>
+    <p>Veromoottori toistaa Verohallinnon {VERO_ESIMERKKEJA} vuoden 2026 esimerkkiveroa palkasta, etuudesta ja eläkkeestä sentilleen. Kansaneläkkeen ja takuueläkkeen laskenta toistaa Kelan esimerkkitaulukot, ansiopäiväraha TYJ:n vuoden 2026 taulukon ja asumistuki Kelan esimerkkilaskelmat. Nämä ovat automaattisia testejä: jos yksikin luku poikkeaa, sivustoa ei julkaista. Jokainen arvo on luettu viralliselta sivulta, ja lähde on mainittu <a href={route('method', lang)}>laskentatapa-sivulla</a> päivämäärineen.</p>
+    <h2>Mitä emme ole</h2>
+    <p>Emme ole Verohallinto, Kela, Eläketurvakeskus, työttömyyskassa emmekä tilitoimisto. Emme anna henkilökohtaista vero- tai oikeusneuvontaa emmekä välitä palveluja. Sitovat tiedot saat OmaVerosta, Kelasta, työeläkeotteeltasi ja työnantajaltasi.</p>
+    <h2>Rahoitus</h2>
+    <p>Laskurit ovat maksuttomia eivätkä vaadi kirjautumista. Jos sivulla joskus on mainoksia, ne eivät koskaan ole laskurin yläpuolella. Syöttämäsi tiedot eivät lähde selaimesta eikä niitä tallenneta.</p>
+    <h2>Englanniksi</h2>
+    <p>Jokainen sivu on myös englanniksi Suomessa työskenteleville ulkomaalaisille. Englanninkielisissä teksteissä suomalaiset termit, kuten verokortti, tuloraja ja lomaraha, selitetään, ja summat pysyvät euroissa.</p>
+    <h2>Yhteys</h2>
+    <p>Onko jokin arvo vanhentunut tai poikkeaako tulos palkkalaskelmastasi? Kirjoita osoitteeseen <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Katso myös <a href={route('editorial', lang)}>toimitusperiaatteet</a> ja <a href={route('terms', lang)}>käyttöehdot ja julkaisija</a>.</p>
+    <p class="text-sm text-navy-600">Luvut {YEAR}, tarkistettu <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'fi-FI')}</time>.</p>
+  </div>
+</PageLayout>

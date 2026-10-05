@@ -1,0 +1,1420 @@
+{
+  "_lisezmoi": "Kaikki vuoden 2026 lakiin perustuvat arvot ovat tässä tiedostossa, ei koskaan sivuilla eikä koodissa (RECETTE §4). Jokainen arvo on luettu viralliselta lähteeltä, joka mainitaan kentässä _lahde ja sources-luettelossa. Kuntien veroprosentit: src/data/kunnat-2026.json (scripts/fi/build-kunnat.py).",
+  "year": 2026,
+  "retrieved_at": "2026-10-05",
+  "valid_from": "2026-01-01",
+  "valid_to": "2026-12-31",
+  "vero": {
+    "_lahde": "Verohallinnon päätös ennakonpidätysprosenttien laskentaperusteista palkkatuloa varten 2026 (VH/5046/00.01.00/2025, 20.11.2025); vero.fi Valtion tuloveroasteikko 2026; Finlex TVL 125 § (5.12.2025/1141)",
+    "valtion_asteikko": [
+      {
+        "alaraja": 0,
+        "vero_alarajalla": 0,
+        "prosentti": 12.64
+      },
+      {
+        "alaraja": 22000,
+        "vero_alarajalla": 2780.8,
+        "prosentti": 19.0
+      },
+      {
+        "alaraja": 32600,
+        "vero_alarajalla": 4794.8,
+        "prosentti": 30.25
+      },
+      {
+        "alaraja": 40100,
+        "vero_alarajalla": 7063.55,
+        "prosentti": 33.25
+      },
+      {
+        "alaraja": 52100,
+        "vero_alarajalla": 11053.55,
+        "prosentti": 37.5
+      }
+    ],
+    "ahvenanmaa_asteikon_alennus_prosenttiyksikkoa": 12.64,
+    "tulonhankkimisvahennys": 750,
+    "perusvahennys": {
+      "enimmaismaara": 4265,
+      "pienenemisprosentti": 18
+    },
+    "ahvenanmaa_perusvahennys": {
+      "enimmaismaara": 3925,
+      "pienenemisprosentti": 8.4
+    },
+    "tyotulovahennys": {
+      "prosentti": 18,
+      "enimmaismaara": 3430,
+      "lapsikorotus": 105,
+      "yli65_korotus": 1200,
+      "pienenemisraja": 35000,
+      "pienenemisprosentti": 2,
+      "pienenemisen_ylaraja": 50550
+    },
+    "tyoelakemaksu_prosentti": 7.3,
+    "tyoelakemaksu_ika": {
+      "alkaa": 17,
+      "paattyy_1962_ja_myohemmin": 70
+    },
+    "tyottomyysvakuutusmaksu_prosentti": 0.89,
+    "tyottomyysvakuutusmaksu_ika": {
+      "alkaa": 18,
+      "paattyy": 64
+    },
+    "sairaanhoitomaksu_palkka_prosentti": 1.1,
+    "sairaanhoitomaksu_korotus_prosentti": 0.39,
+    "sairaanhoitomaksu_muu_tulo_prosentti": 1.49,
+    "paivarahamaksu_prosentti": 0.88,
+    "paivarahamaksu_tuloraja": 17255,
+    "yle": {
+      "prosentti": 2.5,
+      "tuloraja": 15150,
+      "enimmaismaara": 160
+    },
+    "ahvenanmaa_mediamaksu": {
+      "maara": 128,
+      "tuloraja": 14000
+    },
+    "matkakulut": {
+      "omavastuu": 900,
+      "enimmaismaara": 7000,
+      "oma_auto_euroa_km": 0.27
+    },
+    "rajoitetusti_verovelvollisen_kunnallisvero": 7.6,
+    "paaomatulovero": {
+      "prosentti": 30,
+      "raja": 30000,
+      "ylempi_prosentti": 34
+    },
+    "ennakonpidatys_enimmais_prosentti": 60,
+    "oletuspalkkatulo": {
+      "alle21": 10000,
+      "21_65": 15000
+    },
+    "palkkatulon_korotus_ennakonpidatyksessa_prosentti": 6.5,
+    "lisaprosenttiasteikko": [
+      {
+        "alaraja": 0,
+        "prosentti": 18.64
+      },
+      {
+        "alaraja": 10000,
+        "prosentti": 19.5
+      },
+      {
+        "alaraja": 15000,
+        "prosentti": 20.5
+      },
+      {
+        "alaraja": 22000,
+        "prosentti": 23.0
+      },
+      {
+        "alaraja": 25500,
+        "prosentti": 28.0
+      },
+      {
+        "alaraja": 32700,
+        "prosentti": 32.0
+      },
+      {
+        "alaraja": 40200,
+        "prosentti": 35.0
+      },
+      {
+        "alaraja": 46000,
+        "prosentti": 37.0
+      },
+      {
+        "alaraja": 52100,
+        "prosentti": 40.0
+      }
+    ],
+    "elaketulon_lisavero": {
+      "prosentti": 5.85,
+      "raja": 60000
+    }
+  },
+  "vero_esimerkit": {
+    "_lahde": "vero.fi, Esimerkkejä palkan, eläkkeen ja etuuden veroprosenteista vuonna 2026 (Helsinki, ev.lut. kirkon jäsen, 17–64 v., ei lapsia), sivu päivitetty 22.11.2025",
+    "kunta": "Helsinki",
+    "palkka": [
+      [
+        10000,
+        0.0
+      ],
+      [
+        16000,
+        2.5
+      ],
+      [
+        20000,
+        278.5
+      ],
+      [
+        30000,
+        2530.49
+      ],
+      [
+        40000,
+        5511.99
+      ],
+      [
+        50000,
+        9361.96
+      ],
+      [
+        60000,
+        13244.84
+      ],
+      [
+        70000,
+        17415.6
+      ]
+    ],
+    "etuus": [
+      [
+        10000,
+        1382.56
+      ],
+      [
+        16000,
+        2850.25
+      ],
+      [
+        20000,
+        3914.55
+      ],
+      [
+        30000,
+        6797.8
+      ],
+      [
+        40000,
+        10309.3
+      ],
+      [
+        50000,
+        14410.3
+      ],
+      [
+        60000,
+        18850.05
+      ],
+      [
+        70000,
+        23379.05
+      ]
+    ],
+    "elake": [
+      [
+        10000,
+        0.0
+      ],
+      [
+        16000,
+        784.06
+      ],
+      [
+        20000,
+        2340.15
+      ],
+      [
+        30000,
+        5699.42
+      ],
+      [
+        40000,
+        9614.77
+      ],
+      [
+        50000,
+        14410.3
+      ],
+      [
+        60000,
+        18850.05
+      ],
+      [
+        70000,
+        23964.05
+      ]
+    ],
+    "palkka_prosentti": [
+      [
+        10000,
+        0.0
+      ],
+      [
+        16000,
+        0.5
+      ],
+      [
+        20000,
+        1.5
+      ],
+      [
+        30000,
+        8.5
+      ],
+      [
+        40000,
+        14.0
+      ],
+      [
+        50000,
+        19.0
+      ],
+      [
+        60000,
+        22.5
+      ],
+      [
+        70000,
+        25.0
+      ]
+    ]
+  },
+  "sources": {
+    "vero_ennakonpidatys": {
+      "url": "https://www.vero.fi/syventavat-vero-ohjeet/paatokset/47363/verohallinnon-paatos-ennakonpidatysprosenttien-laskentaperusteista-palkkatuloa-varten-ja-ennakonkannossa-maarattavan-ennakkoveron-laskentaperusteista-vuodelle-2026/",
+      "label": {
+        "fi": "Verohallinnon päätös ennakonpidätysprosenttien laskentaperusteista palkkatuloa varten vuodelle 2026 (20.11.2025)",
+        "en": "Finnish Tax Administration decision on the 2026 withholding calculation rules for wages (20 Nov 2025)"
+      }
+    },
+    "vero_kunnat": {
+      "url": "https://www.vero.fi/syventavat-vero-ohjeet/paatokset/47465/kuntien-ja-seurakuntien-tuloveroprosentit-vuonna-2026/",
+      "label": {
+        "fi": "Verohallinto: Kuntien ja seurakuntien tuloveroprosentit vuonna 2026 (18.11.2025)",
+        "en": "Finnish Tax Administration: municipal and parish income tax rates for 2026 (18 Nov 2025)"
+      }
+    },
+    "vero_asteikko": {
+      "url": "https://www.vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/tulot/ansiotulot/",
+      "label": {
+        "fi": "vero.fi: Ansiotulot ja valtion tuloveroasteikko 2026",
+        "en": "vero.fi: earned income and the 2026 state income tax scale"
+      }
+    },
+    "vero_veroperusteet": {
+      "url": "https://www.vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/verokortti/veroprosentti-ja-tuloraja/veroperusteet/",
+      "label": {
+        "fi": "vero.fi: Veroperusteet 2026 (sairaanhoitomaksu, päivärahamaksu, Yle-vero)",
+        "en": "vero.fi: 2026 tax bases (health insurance contributions, Yle tax)"
+      }
+    },
+    "vero_esimerkit": {
+      "url": "https://www.vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/tulot/ansiotulot/palkan-el%C3%A4kkeen-ja-etuuden-veroprosentit/",
+      "label": {
+        "fi": "vero.fi: Esimerkkejä palkan, eläkkeen ja etuuden veroprosenteista vuonna 2026",
+        "en": "vero.fi: examples of 2026 tax rates on wages, pensions and benefits"
+      }
+    },
+    "vero_verokortti_en": {
+      "url": "https://www.vero.fi/en/individuals/tax-cards-and-tax-returns/tax_card/",
+      "label": {
+        "fi": "vero.fi: Tax card (englanniksi)",
+        "en": "vero.fi: Tax card (English)"
+      }
+    },
+    "vero_prosenttilaskuri": {
+      "url": "https://www.vero.fi/henkiloasiakkaat/verokortti-ja-veroilmoitus/verokortti/veroprosenttilaskuri/",
+      "label": {
+        "fi": "vero.fi: Veroprosenttilaskuri",
+        "en": "vero.fi: official tax percentage calculator"
+      }
+    },
+    "finlex_tvl": {
+      "url": "https://www.finlex.fi/fi/lainsaadanto/1992/1535",
+      "label": {
+        "fi": "Finlex: Tuloverolaki 1535/1992 (125 § työtulovähennys, muutos 1141/2025)",
+        "en": "Finlex: Income Tax Act 1535/1992 (section 125 earned income tax credit, amended 1141/2025)"
+      }
+    },
+    "tyoelake_maara": {
+      "url": "https://www.tyoelake.fi/paljonko-saan-elaketta/tyoelakkeen-maara/",
+      "label": {
+        "fi": "Työeläke.fi: Työeläkkeen määrä ja karttuminen",
+        "en": "Työeläke.fi: how earnings-related pension accrues"
+      }
+    },
+    "tyoelake_ika": {
+      "url": "https://www.tyoelake.fi/elakkeet-eri-elamantilanteissa/vanhuuselake-elakeika-syntymavuoden-mukaan/",
+      "label": {
+        "fi": "Työeläke.fi: Vanhuuseläke, eläkeikä syntymävuoden mukaan",
+        "en": "Työeläke.fi: old-age pension and retirement age by year of birth"
+      }
+    },
+    "etk_elinaikakerroin": {
+      "url": "https://www.etk.fi/ajankohtaista/vuonna-1964-syntyneiden-elinaikakerroin-vahvistettu-pienentaa-alkavia-tyoelakkeita-54-prosenttia/",
+      "label": {
+        "fi": "Eläketurvakeskus: Vuonna 1964 syntyneiden elinaikakerroin vahvistettu (13.11.2025)",
+        "en": "Finnish Centre for Pensions: life expectancy coefficient for those born in 1964 confirmed (13 Nov 2025)"
+      }
+    },
+    "etk_maksut": {
+      "url": "https://www.etk.fi/ajankohtaista/tyoelakemaksut-vuonna-2026/",
+      "label": {
+        "fi": "Eläketurvakeskus: Työeläkemaksut vuonna 2026",
+        "en": "Finnish Centre for Pensions: earnings-related pension contributions in 2026"
+      }
+    },
+    "etk_keskielake": {
+      "url": "https://www.etk.fi/suomen-elakejarjestelma/elakkeensaajien-tulotaso/keskimaaraiset-elakkeet/",
+      "label": {
+        "fi": "Eläketurvakeskus: Keskimääräiset eläkkeet",
+        "en": "Finnish Centre for Pensions: average pensions"
+      }
+    },
+    "finlex_tyel": {
+      "url": "https://www.finlex.fi/fi/lainsaadanto/2006/395",
+      "label": {
+        "fi": "Finlex: Työntekijän eläkelaki 395/2006",
+        "en": "Finlex: Employees Pensions Act 395/2006"
+      }
+    },
+    "kela_vanhuuselake": {
+      "url": "https://www.kela.fi/vanhuuselake",
+      "label": {
+        "fi": "Kela: Vanhuuseläke (kansaneläke)",
+        "en": "Kela: national old-age pension"
+      }
+    },
+    "kela_takuuelake": {
+      "url": "https://www.kela.fi/takuuelake",
+      "label": {
+        "fi": "Kela: Takuueläke",
+        "en": "Kela: guarantee pension"
+      }
+    },
+    "kela_elaketaulukot": {
+      "url": "https://www.kela.fi/documents/d/guest/elaketaulukot_2026",
+      "label": {
+        "fi": "Kela: Eläketaulukot, voimassa 1.1.2026 alkaen",
+        "en": "Kela: pension tables valid from 1 January 2026"
+      }
+    },
+    "kela_indeksi": {
+      "url": "https://www.kela.fi/kansanelakeindeksi",
+      "label": {
+        "fi": "Kela: Kansaneläkeindeksi 2026",
+        "en": "Kela: national pension index 2026"
+      }
+    },
+    "vero_elake_paatos": {
+      "url": "https://www.vero.fi/syventavat-vero-ohjeet/paatokset/47176/verohallinnon-paatos-ennakonpidatysprosenttien-laskentaperusteista-elaketta-ja-elakkeensaajan-palkkatuloa-varten-seka-ennakonkannossa-maarattavan-ennakkoveron-laskentaperusteista-vuodelle-2026/",
+      "label": {
+        "fi": "Verohallinnon päätös eläkkeen ennakonpidätyksen laskentaperusteista vuodelle 2026",
+        "en": "Tax Administration decision on 2026 withholding rules for pensions"
+      }
+    },
+    "kela_yleinen_asumistuki": {
+      "url": "https://www.kela.fi/yleinen-asumistuki",
+      "label": {
+        "fi": "Kela: Yleinen asumistuki",
+        "en": "Kela: general housing allowance"
+      }
+    },
+    "kela_asumistuki_laskenta": {
+      "url": "https://www.kela.fi/miten-tulot-ja-menot-vaikuttavat",
+      "label": {
+        "fi": "Kela: Miten tulot ja menot vaikuttavat asumistukeen",
+        "en": "Kela: how income and housing costs affect the housing allowance"
+      }
+    },
+    "finlex_asumistuki": {
+      "url": "https://www.finlex.fi/fi/lainsaadanto/2014/938",
+      "label": {
+        "fi": "Finlex: Laki yleisestä asumistuesta 938/2014",
+        "en": "Finlex: General Housing Allowance Act 938/2014"
+      }
+    },
+    "kela_yleistuki": {
+      "url": "https://www.kela.fi/tyottomyys-yleistuki",
+      "label": {
+        "fi": "Kela: Yleistuki työttömyyden aikana",
+        "en": "Kela: general support (yleistuki) during unemployment"
+      }
+    },
+    "tyj_laskenta": {
+      "url": "https://www.tyj.fi/jos-jaat-tyottomaksi/tyottoman-tietopankki/nain-ansiopaivaraha-lasketaan/",
+      "label": {
+        "fi": "TYJ: Näin ansiopäiväraha lasketaan",
+        "en": "TYJ (unemployment funds): how the earnings-related allowance is calculated"
+      }
+    },
+    "tyj_porrastus": {
+      "url": "https://www.tyj.fi/jos-jaat-tyottomaksi/ansiopaivarahan-porrastus/",
+      "label": {
+        "fi": "TYJ: Ansiopäivärahan porrastus",
+        "en": "TYJ: step-down of the earnings-related allowance"
+      }
+    },
+    "tyj_taulukko": {
+      "url": "https://www.tyj.fi/ansiopaivarahataulukko/",
+      "label": {
+        "fi": "TYJ: Ansiopäivärahataulukko 2026",
+        "en": "TYJ: 2026 earnings-related allowance table"
+      }
+    },
+    "finlex_tyottomyysturva": {
+      "url": "https://www.finlex.fi/fi/lainsaadanto/2002/1290",
+      "label": {
+        "fi": "Finlex: Työttömyysturvalaki 1290/2002",
+        "en": "Finlex: Unemployment Security Act 1290/2002"
+      }
+    },
+    "kela_vanhempainvapaa": {
+      "url": "https://www.kela.fi/vanhempainvapaalla",
+      "label": {
+        "fi": "Kela: Vanhempainvapaalla (vanhempainraha)",
+        "en": "Kela: parental allowance during parental leave"
+      }
+    },
+    "kela_vuositulot": {
+      "url": "https://www.kela.fi/vuositulot-laskukaavat",
+      "label": {
+        "fi": "Kela: Vuositulot ja laskukaavat 2026",
+        "en": "Kela: annual income and 2026 formulas"
+      }
+    },
+    "vero_kotitalous": {
+      "url": "https://www.vero.fi/henkiloasiakkaat/vahennykset/kotitalousvahennys/kotitalousvahennyksen-maara/",
+      "label": {
+        "fi": "vero.fi: Kotitalousvähennyksen määrä",
+        "en": "vero.fi: amount of the household tax credit"
+      }
+    },
+    "vero_kotitalous_esitys": {
+      "url": "https://www.vero.fi/tietoa-verohallinnosta/uutishuone/lehdist%C3%B6tiedotteet/2026/kotitalousvahennykseen-ehdotetaan-korotusta-matkakulujen-omavastuu-pienenee/",
+      "label": {
+        "fi": "Verohallinto: Kotitalousvähennykseen ehdotetaan korotusta (16.6.2026)",
+        "en": "Tax Administration: increase proposed to the household tax credit (16 Jun 2026)"
+      }
+    },
+    "finlex_vuosiloma": {
+      "url": "https://www.finlex.fi/fi/lainsaadanto/2005/162",
+      "label": {
+        "fi": "Finlex: Vuosilomalaki 162/2005",
+        "en": "Finlex: Annual Holidays Act 162/2005"
+      }
+    },
+    "tyosuojelu_lomapalkka": {
+      "url": "https://tyosuojelu.fi/tyosuhde/vuosiloma/lomapalkka-ja-korvaus",
+      "label": {
+        "fi": "Työsuojeluhallinto: Lomapalkka ja lomakorvaus",
+        "en": "Occupational Safety and Health Administration: holiday pay and compensation"
+      }
+    }
+  },
+  "elake": {
+    "_lahde": "tyoelake.fi, etk.fi, Finlex TyEL 395/2006, Kela Eläketaulukot 1.1.2026 (23.10.2025), Verohallinnon päätös eläkkeen ennakonpidätyksestä 2026 (20.11.2025); luettu 2026-10-05",
+    "karttumaprosentti": 1.5,
+    "karttuma_ika": {
+      "alkaa": 17,
+      "paattyy": 69
+    },
+    "etuuskarttuma_prosentti_perusteesta": {
+      "ansiopaivaraha": 75,
+      "vanhempainraha": 121,
+      "sairauspaivaraha": 62,
+      "muut": 65
+    },
+    "kotihoidon_tuki_laskennallinen_kk": 896.42,
+    "lykkayskorotus_prosentti_kk": 0.4,
+    "varhennusvahennys_ove_prosentti_kk": 0.4,
+    "ove_osuudet": [
+      25,
+      50
+    ],
+    "tyouraelake_ika": 63,
+    "tyouraelake_tyovuodet": 38,
+    "elinaikakerroin": {
+      "1955": 0.96344,
+      "1956": 0.96102,
+      "1957": 0.95722,
+      "1958": 0.95404,
+      "1959": 0.94984,
+      "1960": 0.94659,
+      "1961": 0.94419,
+      "1962": 0.94692,
+      "1963": 0.94759,
+      "1964": 0.94643
+    },
+    "elinaikakerroin_viimeisin": {
+      "syntymavuosi": 1964,
+      "arvo": 0.94643,
+      "vahvistettu": "2025-11-13"
+    },
+    "elakeika_vahvistettu": {
+      "1956": {
+        "alin": [
+          63,
+          6
+        ],
+        "tavoite": [
+          64,
+          5
+        ],
+        "ylin": 68,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1957": {
+        "alin": [
+          63,
+          9
+        ],
+        "tavoite": [
+          64,
+          9
+        ],
+        "ylin": 68,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1958": {
+        "alin": [
+          64,
+          0
+        ],
+        "tavoite": [
+          65,
+          1
+        ],
+        "ylin": 69,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1959": {
+        "alin": [
+          64,
+          3
+        ],
+        "tavoite": [
+          65,
+          5
+        ],
+        "ylin": 69,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1960": {
+        "alin": [
+          64,
+          6
+        ],
+        "tavoite": [
+          65,
+          9
+        ],
+        "ylin": 69,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1961": {
+        "alin": [
+          64,
+          9
+        ],
+        "tavoite": [
+          66,
+          0
+        ],
+        "ylin": 69,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1962": {
+        "alin": [
+          65,
+          0
+        ],
+        "tavoite": [
+          66,
+          3
+        ],
+        "ylin": 70,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1963": {
+        "alin": [
+          65,
+          0
+        ],
+        "tavoite": [
+          66,
+          2
+        ],
+        "ylin": 70,
+        "ove": [
+          61,
+          0
+        ]
+      },
+      "1964": {
+        "alin": [
+          65,
+          0
+        ],
+        "tavoite": [
+          66,
+          3
+        ],
+        "ylin": 70,
+        "ove": [
+          62,
+          0
+        ]
+      }
+    },
+    "_elakeika_ennuste": "tyoelake.fi:n virallisen laskurin ennuste (tyoelakeRetirementData), ei vahvistettu; 1965 alkaen ikäraja vahvistetaan sinä vuonna, jona ikäluokka täyttää 62 vuotta",
+    "elakeika_ennuste": {
+      "1965": {
+        "alin": [
+          65,
+          0
+        ],
+        "tavoite": [
+          66,
+          3
+        ],
+        "ove": [
+          62,
+          0
+        ]
+      },
+      "1966": {
+        "alin": [
+          65,
+          1
+        ],
+        "tavoite": [
+          66,
+          4
+        ],
+        "ove": [
+          62,
+          1
+        ]
+      },
+      "1967": {
+        "alin": [
+          65,
+          3
+        ],
+        "tavoite": [
+          66,
+          8
+        ],
+        "ove": [
+          62,
+          3
+        ]
+      },
+      "1968": {
+        "alin": [
+          65,
+          5
+        ],
+        "tavoite": [
+          66,
+          10
+        ],
+        "ove": [
+          62,
+          5
+        ]
+      },
+      "1969": {
+        "alin": [
+          65,
+          6
+        ],
+        "tavoite": [
+          67,
+          0
+        ],
+        "ove": [
+          62,
+          6
+        ]
+      },
+      "1970": {
+        "alin": [
+          65,
+          8
+        ],
+        "tavoite": [
+          67,
+          2
+        ],
+        "ove": [
+          62,
+          8
+        ]
+      },
+      "1971": {
+        "alin": [
+          65,
+          9
+        ],
+        "tavoite": [
+          67,
+          3
+        ],
+        "ove": [
+          62,
+          9
+        ]
+      },
+      "1972": {
+        "alin": [
+          65,
+          10
+        ],
+        "tavoite": [
+          67,
+          5
+        ],
+        "ove": [
+          62,
+          10
+        ]
+      },
+      "1973": {
+        "alin": [
+          65,
+          11
+        ],
+        "tavoite": [
+          67,
+          7
+        ],
+        "ove": [
+          62,
+          11
+        ]
+      },
+      "1974": {
+        "alin": [
+          66,
+          0
+        ],
+        "tavoite": [
+          67,
+          8
+        ],
+        "ove": [
+          63,
+          0
+        ]
+      },
+      "1975": {
+        "alin": [
+          66,
+          2
+        ],
+        "tavoite": [
+          67,
+          10
+        ],
+        "ove": [
+          63,
+          2
+        ]
+      },
+      "1976": {
+        "alin": [
+          66,
+          3
+        ],
+        "tavoite": [
+          68,
+          0
+        ],
+        "ove": [
+          63,
+          3
+        ]
+      },
+      "1977": {
+        "alin": [
+          66,
+          4
+        ],
+        "tavoite": [
+          68,
+          1
+        ],
+        "ove": [
+          63,
+          4
+        ]
+      },
+      "1978": {
+        "alin": [
+          66,
+          5
+        ],
+        "tavoite": [
+          68,
+          3
+        ],
+        "ove": [
+          63,
+          5
+        ]
+      },
+      "1979": {
+        "alin": [
+          66,
+          6
+        ],
+        "tavoite": [
+          68,
+          4
+        ],
+        "ove": [
+          63,
+          6
+        ]
+      },
+      "1980": {
+        "alin": [
+          66,
+          7
+        ],
+        "tavoite": [
+          68,
+          6
+        ],
+        "ove": [
+          63,
+          7
+        ]
+      },
+      "1984": {
+        "alin": [
+          67,
+          0
+        ],
+        "tavoite": [
+          69,
+          1
+        ],
+        "ove": [
+          64,
+          0
+        ]
+      },
+      "1990": {
+        "alin": [
+          67,
+          6
+        ],
+        "tavoite": [
+          69,
+          10
+        ],
+        "ove": [
+          64,
+          6
+        ]
+      },
+      "1993": {
+        "alin": [
+          67,
+          9
+        ],
+        "tavoite": null,
+        "ove": [
+          64,
+          9
+        ]
+      }
+    },
+    "ylin_elakeika_1962_jalkeen": 70,
+    "elake_1965_alin_rajat": {
+      "vahintaan": [
+        64,
+        10
+      ],
+      "enintaan": [
+        65,
+        2
+      ]
+    },
+    "tyel_maksu_2026": {
+      "yhteensa": 24.4,
+      "tyonantaja_keskimaarin": 17.1,
+      "tyontekija": 7.3
+    },
+    "indeksit": {
+      "kansanelakeindeksi": 1939,
+      "korotus_prosentti": 0.5,
+      "tyoelakeindeksi": 3104,
+      "palkkakerroin": 1.712
+    },
+    "kansanelake": {
+      "yksin_kk": 787.07,
+      "parisuhde_kk": 702.69,
+      "vahentamaton_raja_kk": 66.54,
+      "vahennys_osuus": 0.5,
+      "yla_raja_yksin_kk": 1624.63,
+      "yla_raja_pari_kk": 1455.88,
+      "pienin_maksettava_kk": 8.01,
+      "ika_ennen_1965": 65,
+      "lykkays_prosentti_kk_1962_jalkeen": 0.4,
+      "asumisaika_vahintaan_v": 3,
+      "tayden_asumisaikasuhde": 0.8,
+      "vahentamaton_raja_v": 798
+    },
+    "takuuelake": {
+      "taysi_kk": 990.9,
+      "tuloraja_kk": 982.9,
+      "pienin_maksettava_kk": 8.01
+    },
+    "elaketulovahennys": {
+      "taysi": 11080,
+      "pienenemis_prosentti": 51,
+      "toinen_raja": 22500,
+      "toinen_pienenemis_prosentti": 19.6
+    },
+    "elakkeensaajan_asumistuki": {
+      "osuus": 0.85,
+      "perusomavastuu_v": 681.39,
+      "lisaomavastuu_prosentti": 43.5,
+      "tuloraja_yksin_v": 10280,
+      "tuloraja_pari_v": 14746,
+      "enimmaisasumismenot_v": {
+        "I": 9287,
+        "II": 8541,
+        "III": 7493
+      },
+      "vahimmaisasumismenot_v": 787,
+      "pienin_maksettava_kk": 7.46
+    },
+    "tilastot_2025": {
+      "kokonaiselake_kaikki_kk": 2029,
+      "kokonaiselake_suomessa_kk": 2138,
+      "vanhuuselakkeensaaja_kk": 2233,
+      "miehet_kk": 2477,
+      "naiset_kk": 1979,
+      "tyoelake_vanhuus_kk": 2045,
+      "uudet_elakkeet_2025_kk": 1909
+    },
+    "takuuelake_esimerkit": {
+      "_lahde": "kela.fi/takuuelake, Esimerkkejä takuueläkkeen määrästä (yksin / parisuhde): [työeläke, kansaneläke, takuueläke]",
+      "yksin": [
+        [
+          0,
+          787.07,
+          203.83
+        ],
+        [
+          50,
+          787.07,
+          153.83
+        ],
+        [
+          100,
+          770.32,
+          120.58
+        ],
+        [
+          200,
+          720.32,
+          70.58
+        ],
+        [
+          325.15,
+          657.74,
+          8.01
+        ],
+        [
+          493.91,
+          573.36,
+          0
+        ],
+        [
+          500,
+          570.32,
+          0
+        ]
+      ],
+      "pari": [
+        [
+          0,
+          702.69,
+          288.21
+        ],
+        [
+          50,
+          702.69,
+          238.21
+        ],
+        [
+          100,
+          685.94,
+          204.96
+        ],
+        [
+          200,
+          635.94,
+          154.96
+        ],
+        [
+          325.15,
+          573.36,
+          92.39
+        ],
+        [
+          493.91,
+          488.98,
+          8.01
+        ],
+        [
+          500,
+          485.94,
+          0
+        ]
+      ]
+    }
+  },
+  "asumistuki": {
+    "_lahde": "Finlex 938/2014 (8, 10, 13, 16 §); Kela: Miten tulot ja menot vaikuttavat (päivitetty 26.9.2026); luettu 2026-10-05",
+    "tukiprosentti": 70,
+    "ahvenanmaa_tukiprosentti": 80,
+    "perusomavastuu": {
+      "kerroin": 0.5,
+      "perus": 667,
+      "aikuinen": 94,
+      "lapsi": 296,
+      "huomiotta_alle": 10
+    },
+    "ahvenanmaa_perusomavastuu": {
+      "kerroin": 0.42,
+      "perus": 667,
+      "aikuinen": 111,
+      "lapsi": 246
+    },
+    "pienin_maksettava": 15,
+    "enimmaisasumismenot": {
+      "I": [
+        563,
+        808,
+        1019,
+        1188,
+        148
+      ],
+      "II": [
+        447,
+        652,
+        828,
+        981,
+        134
+      ],
+      "III": [
+        394,
+        574,
+        734,
+        875,
+        129
+      ],
+      "Ahvenanmaa": [
+        470,
+        687,
+        871,
+        1032,
+        141
+      ]
+    },
+    "kuntaryhma_I": [
+      "Espoo",
+      "Helsinki",
+      "Kauniainen",
+      "Vantaa"
+    ],
+    "kuntaryhma_II": [
+      "Hyvinkää",
+      "Hämeenlinna",
+      "Joensuu",
+      "Jyväskylä",
+      "Järvenpää",
+      "Kerava",
+      "Kirkkonummi",
+      "Kuopio",
+      "Lahti",
+      "Lohja",
+      "Nokia",
+      "Nurmijärvi",
+      "Oulu",
+      "Porvoo",
+      "Raisio",
+      "Riihimäki",
+      "Rovaniemi",
+      "Seinäjoki",
+      "Sipoo",
+      "Siuntio",
+      "Tampere",
+      "Turku",
+      "Tuusula",
+      "Vihti"
+    ],
+    "vesimaksu_henkilo": 20,
+    "lammitys": {
+      "perus": [
+        46,
+        16
+      ],
+      "itainen": [
+        48,
+        17
+      ],
+      "pohjoinen": [
+        50,
+        17
+      ]
+    },
+    "lammitys_alueet": {
+      "itainen": "Etelä-Savo, Pohjois-Savo, Pohjois-Karjala",
+      "pohjoinen": "Pohjois-Pohjanmaa, Kainuu, Lappi"
+    },
+    "varallisuus": {
+      "raja_yksi": 10000,
+      "raja_useampi": 20000,
+      "osuus": 20,
+      "este": 50000,
+      "kayttovara_henkilo": 2000
+    },
+    "korot_osingot_huomiotta_kk": 12.02,
+    "muutosilmoitus": {
+      "nousu": 400,
+      "lasku": 200
+    },
+    "takautuvasti_kk": 1,
+    "esimerkit": [
+      {
+        "nimi": "Jaakko",
+        "kunta": "Turku",
+        "aikuiset": 1,
+        "lapset": 0,
+        "tulot": 800,
+        "menot": 700,
+        "tuki": 299.25
+      },
+      {
+        "nimi": "Eino ja Elisa",
+        "kunta": "Turku",
+        "aikuiset": 2,
+        "lapset": 0,
+        "tulot": 1800,
+        "menot": 950,
+        "tuki": 125.65
+      }
+    ]
+  },
+  "tyottomyys": {
+    "_lahde": "Kela /tyottomyys-yleistuki, /peruspaivaraha; TYJ Näin ansiopäiväraha lasketaan, porrastus, ansiopäivärahataulukko 2026; Finlex 1290/2002; luettu 2026-10-05",
+    "yleistuki_pv": 37.21,
+    "yleistuki_alkaen": "2026-05-01",
+    "paivia_viikossa": 5,
+    "omavastuupaivat": 7,
+    "yleistuki_muut_tulot_raja_kk": 311,
+    "yleistuki_muut_tulot_vahennys": 50,
+    "yleistuki_vanhemmat": {
+      "tuloraja": 2500,
+      "lapsikorotus": 106,
+      "vahennys": 50,
+      "vahintaan_prosentti": 35
+    },
+    "yleistuki_odotusaika_viikkoa": 21,
+    "perusosa_pv": 37.21,
+    "ansio_osa_prosentti": 45,
+    "ansio_osa_yli_taitekohdan": 20,
+    "taitekohta_kerroin": 95,
+    "enintaan_prosentti_paivapalkasta": 90,
+    "tyopaivia_kuukaudessa": 21.5,
+    "vahennettava_prosentti": 3.83,
+    "porrastus": [
+      {
+        "paivia": 40,
+        "prosentti": 80
+      },
+      {
+        "paivia": 170,
+        "prosentti": 75
+      }
+    ],
+    "enimmaiskesto": {
+      "lyhyt": 300,
+      "pitka": 400,
+      "ikaantynyt": 500,
+      "tyohistoria_raja_v": 3,
+      "ikaantynyt_ika": 58
+    },
+    "tyossaoloehto_kk": 12,
+    "tyossaoloehto_palkka_kk": 930,
+    "tyossaoloehto_puolikas_kk": 465,
+    "ennakonpidatys_vahintaan": 25,
+    "tyj_taulukko": [
+      [
+        1000,
+        866,
+        800,
+        800
+      ],
+      [
+        1300,
+        1003,
+        802,
+        800
+      ],
+      [
+        1500,
+        1089,
+        871,
+        817
+      ],
+      [
+        2000,
+        1306,
+        1044,
+        979
+      ],
+      [
+        2500,
+        1522,
+        1218,
+        1141
+      ],
+      [
+        3000,
+        1738,
+        1391,
+        1304
+      ],
+      [
+        3676,
+        2031,
+        1625,
+        1523
+      ],
+      [
+        4000,
+        2093,
+        1674,
+        1570
+      ],
+      [
+        5000,
+        2285,
+        1828,
+        1714
+      ],
+      [
+        10000,
+        3247,
+        2598,
+        2435
+      ]
+    ]
+  },
+  "vanhempainraha": {
+    "_lahde": "Kela /vanhempainvapaalla (29.9.2026), /vuositulot-laskukaavat, /vuositulot (26.9.2026); luettu 2026-10-05",
+    "vahimmais_pv": 31.99,
+    "vakuutusmaksuvahennys_prosentti": 9.07,
+    "jakaja": 300,
+    "rajat": [
+      13712,
+      45744,
+      70379
+    ],
+    "prosentit": [
+      70,
+      40,
+      25
+    ],
+    "korotettu_raja_ala": 10664,
+    "korotettu_prosentti": 90,
+    "korotettu_yli_prosentti": 32.5,
+    "korotetut_paivat_vanhempainraha": 16,
+    "raskausraha_paivat": 40,
+    "paivat_yhteensa": 320,
+    "paivat_vanhempi": 160,
+    "luovutettavissa": 63,
+    "paivia_viikossa": 6,
+    "esimerkki_vuositulo": {
+      "brutto": 31125,
+      "pv_noin": 66
+    }
+  },
+  "kotitalousvahennys": {
+    "_lahde": "vero.fi Kotitalousvähennyksen määrä (16.6.2026); Finlex TVL 127 a–127 f; Verohallinnon tiedote 16.6.2026 (esitys); luettu 2026-10-05",
+    "voimassa": {
+      "yritys_prosentti": 35,
+      "palkka_prosentti": 13,
+      "omavastuu": 150,
+      "enimmaismaara": 1600
+    },
+    "oljylammitys": {
+      "yritys_prosentti": 60,
+      "palkka_prosentti": 30,
+      "enimmaismaara": 3500,
+      "vuodet": "2025–2027"
+    },
+    "esitys_2026_2027": {
+      "yritys_prosentti": 40,
+      "palkka_prosentti": 15,
+      "omavastuu": 150,
+      "enimmaismaara": 2100,
+      "tila": "hallituksen esitys, ei hyväksytty 5.10.2026 mennessä",
+      "takautuvasti": "2026-01-01"
+    },
+    "esitys_matkakulut_omavastuu": 800,
+    "esimerkit": [
+      [
+        600,
+        60
+      ],
+      [
+        8000,
+        1600
+      ]
+    ]
+  },
+  "vuosiloma": {
+    "_lahde": "Finlex vuosilomalaki 162/2005 (5, 6, 10, 12, 16, 17 §); Työsuojeluhallinto tyosuojelu.fi Lomapalkka ja -korvaus (15.10.2025); luettu 2026-10-05",
+    "lomapaivat_kk": 2.5,
+    "lomapaivat_kk_alle_vuosi": 2,
+    "taysi_kk_paivat": 14,
+    "taysi_kk_tunnit": 35,
+    "lomakorvaus_jakaja_kk": 25,
+    "lomakorvaus_jakaja_vk": 6,
+    "prosenttiperuste": [
+      9,
+      11.5
+    ],
+    "lomaraha_esimerkki_prosentti": 50,
+    "lomaraha_lakiperuste": "ei vuosilomalaissa; TES",
+    "vanhentuminen_v": 2
+  }
+}

@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fi';
+---
+<PageLayout title="Yhteystiedot: virheilmoitukset ja laskurin upotus sivustollesi" description="Ota yhteyttä Laskurit Suomeen: vanhentunut arvo, palkkalaskelmasta poikkeava tulos, kysymys laskentatavasta tai laskurin upottaminen omalle sivustollesi." lang={lang} noindex={true} breadcrumbs={[{ label: 'Yhteystiedot' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Yhteystiedot</h1>
+    <p>Luemme jokaisen viestin: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Tulos poikkeaa palkkalaskelmastasi</h2>
+    <p>Lähetä laskurin <strong>jakolinkki</strong> (siinä ovat syöttämäsi luvut) ja palkkalaskelman olennaiset rivit ilman nimeä ja henkilötunnusta. Tavallisimmat syyt ovat luontoisedut, verokortin vanha tuloraja, kesken vuoden muuttunut palkka tai työehtosopimuksen omat lisät. Jos virhe on meidän, korjaamme sen ja lisäämme tapauksen testeihin <a href={route('editorial', lang)}>toimitusperiaatteiden</a> mukaisesti.</p>
+    <h2>Laskurin upottaminen</h2>
+    <p>Ammattiosastot, yhdistykset, mediat ja henkilöstöhallinto voivat upottaa nettopalkkalaskurin maksutta: koodi on <a href={route('widget', lang)}>upotussivulla</a>.</p>
+    <h2>Mitä emme tee</h2>
+    <p>Emme anna henkilökohtaista vero- tai oikeusneuvontaa emmekä tarkista viranomaisten päätöksiä. Oman asiasi hoitavat Verohallinto, Kela, työeläkeyhtiösi ja työttömyyskassasi.</p>
+    <h2>Vastausaika</h2><p>Yleensä viiden arkipäivän kuluessa, virheilmoitukset ensin. Kaikki arvot tarkistetaan vähintään {REVIEW_CYCLE_MONTHS} kuukauden välein.</p>
+    <h2>Julkaisija</h2>
+    <LegalIdentity lang={lang} />
+    <p>Katso <a href={route('terms', lang)}>käyttöehdot ja julkaisija</a>. Vastuussa: {AUTHOR_NAME}. Päivitetty {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

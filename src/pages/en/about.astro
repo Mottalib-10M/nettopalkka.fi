@@ -1,0 +1,29 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { YEAR, LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { displayDate } from '../../lib/format';
+import { KUNTIA, VERO_ESIMERKKEJA } from '../../lib/esimerkit';
+const lang = 'en';
+---
+<PageLayout title="Radif Partners: who builds these Finnish pay calculators" description="Radif Partners publishes these 2026 salary, tax, pension and Kela calculators for Finland and tests them against official Vero, Kela and TYJ examples." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'About', path: route('about', lang) }])]} breadcrumbs={[{ label: 'About' }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">About {SITE_NAMES.en}</h1></header>
+  <div class="prose prose-slate max-w-none">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>This site is published by Radif Partners, an independent publisher of pay, tax and benefit calculators for several countries. For Finland we built what newcomers keep asking for in their first weeks here: a straight answer to "what will actually land in my account", in English, without having to decode a verokortti first.</p>
+    <h2>Why it calculates better</h2>
+    <p>Vero’s official tool returns a withholding percentage, not your net pay. Many private salary calculators ask you to type that percentage yourself or use a national average municipal tax, even though the gap between the cheapest and the most expensive municipality is about six points. We compute net pay with the 2026 state tax scale, the actual rates of all {KUNTIA} municipalities and their parishes, and the 2026 pension, unemployment and health insurance contributions. Pension (earnings-related, national and guarantee pension after tax) and Kela benefits sit on the same site, in Finnish and English.</p>
+    <h2>How we test</h2>
+    <p>The tax engine reproduces to the cent all {VERO_ESIMERKKEJA} sample tax amounts that Vero publishes for 2026 wages, benefits and pensions. The pension code reproduces Kela’s national and guarantee pension tables, the unemployment code TYJ’s 2026 allowance table, and the housing code Kela’s worked examples. These run as automatic tests: if one figure drifts, nothing is published. Every value was read on an official page; the <a href={route('method', lang)}>calculation method</a> lists each source with its date.</p>
+    <h2>What we are not</h2>
+    <p>We are not Vero, Kela, the Finnish Centre for Pensions, an unemployment fund or an accounting firm. We give no personal tax or legal advice and refer you to no one. Binding answers come from MyTax (OmaVero), Kela, your pension record and your employer.</p>
+    <h2>Funding</h2>
+    <p>The calculators are free and need no account. If the site ever shows ads, they will never sit above a calculator. What you type stays in your browser and is not stored.</p>
+    <h2>In Finnish too</h2>
+    <p>Every page also exists in Finnish. The English pages are written for people working in Finland: Finnish terms such as verokortti (tax card), tuloraja (income limit) and lomaraha (holiday bonus) are explained, and amounts stay in euros.</p>
+    <h2>Contact</h2>
+    <p>Spotted an outdated value, or a result that differs from your payslip? Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. See also the <a href={route('editorial', lang)}>editorial policy</a> and the <a href={route('terms', lang)}>legal notice</a>.</p>
+    <p class="text-sm text-navy-600">Figures {YEAR}, checked on <time datetime={LAST_UPDATED}>{displayDate(LAST_UPDATED, 'en-FI')}</time>.</p>
+  </div>
+</PageLayout>

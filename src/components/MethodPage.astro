@@ -1,0 +1,110 @@
+---
+/** Laskentatapa (luottamussivu, RECETTE §8.2): mistä jokainen arvo tulee, kaavat, tarkistukset virallisia esimerkkejä vastaan, rajoitukset. */
+import PageLayout from '../layouts/PageLayout.astro';
+import { route, type Locale } from '../i18n/routes';
+import { P, KUNNAT_META } from '../lib/engine/params';
+import { formatMoney, formatNumber, displayDate } from '../lib/format';
+import { breadcrumbSchema, webPageSchema } from '../lib/seo';
+import { LAST_UPDATED, CONTACT_EMAIL, REVIEW_CYCLE_MONTHS, LANG_TAGS } from '../data/site-config';
+import { KUNTIA, AHVENANMAAN_KUNTIA, VERO_ESIMERKKEJA } from '../lib/esimerkit';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const fi = lang === 'fi';
+const $ = (n: number, d = 0) => formatMoney(n, d, lang);
+const n2 = (x: number) => formatNumber(x, 2, lang);
+const dt = (iso: string) => displayDate(iso, LANG_TAGS[lang]);
+const V = P.vero, E = P.elake, A = P.asumistuki, T = P.tyottomyys, VR = P.vanhempainraha, K = P.kotitalousvahennys;
+const title = fi ? 'Kaavat ja lähteet 2026: näin nettopalkka ja eläke lasketaan' : 'Formulas and Sources 2026: How Net Pay and Pensions Work';
+const description = fi ? 'Laskentatapa 2026: mistä jokainen veroprosentti, eläkeikä ja Kelan raja tulee, miten nettopalkka lasketaan ja mihin virallisiin esimerkkeihin se on tarkistettu.' : 'Where each 2026 tax rate, pension age and Kela limit comes from, how net pay is computed and which official examples every calculator is checked against.';
+const h1 = fi ? 'Laskentatapa ja tarkistukset' : 'Calculation method and checks';
+const path = route('method', lang);
+const sources = Object.values(P.sources);
+const pensionEsim = P.elake.takuuelake_esimerkit.yksin.length + P.elake.takuuelake_esimerkit.pari.length;
+const asteikko = V.valtion_asteikko.map((r, i) => `${$(r.alaraja)}${i + 1 < V.valtion_asteikko.length ? `–${$(V.valtion_asteikko[i + 1].alaraja)}` : '+'}: ${n2(r.prosentti)} %`).join(' · ');
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: h1, description, path, lang }), breadcrumbSchema([{ name: fi ? 'Etusivu' : 'Home', path: route('home', lang) }, { name: h1, path }])]} breadcrumbs={[{ label: h1 }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{h1}</h1></header>
+  {fi ? (
+  <div class="prose prose-slate max-w-none">
+    <p>Kaikki sivuston lakiin perustuvat arvot ovat yhdessä parametritiedostossa, joka on tarkistettu viimeksi <time datetime={P.retrieved_at}>{dt(P.retrieved_at)}</time> virallisista lähteistä: Verohallinnon päätöksistä, Finlexin laeista, Eläketurvakeskuksen ja Kelan sivuilta sekä työttömyyskassojen yhteisjärjestö TYJ:n laskentaohjeesta. Laskurit ja tekstit lukevat luvut vain tästä tiedostosta, joten korjattu arvo muuttuu kaikkialla yhtä aikaa. Kuntien veroprosentit ovat erillisessä taulukossa, joka luodaan suoraan Verohallinnon päätöksestä {dt(KUNNAT_META.annettu)} ({KUNNAT_META.diaari}).</p>
+    <h2>Palkan verot ja nettopalkka</h2>
+    <p>Puhdas ansiotulo = bruttopalkka − tulonhankkimisvähennys {$(V.tulonhankkimisvahennys)} − työmatkakulujen {$(V.matkakulut.omavastuu)} ylittävä osa (enintään {$(V.matkakulut.enimmaismaara)}) − ammattiliiton ja kassan jäsenmaksut. Siitä vähennetään työeläkemaksu {n2(V.tyoelakemaksu_prosentti)} %, työttömyysvakuutusmaksu {n2(V.tyottomyysvakuutusmaksu_prosentti)} % ja päivärahamaksu {n2(V.paivarahamaksu_prosentti)} % (vuosiansio vähintään {$(V.paivarahamaksu_tuloraja)}), ja viimeisenä perusvähennys {$(V.perusvahennys.enimmaismaara)}, joka pienenee {n2(V.perusvahennys.pienenemisprosentti)} % ylittävästä tulosta. Sama verotettava tulo on sekä valtion- että kunnallisverotuksen pohja.</p>
+    <p>Valtion tulovero lasketaan asteikolla {asteikko}. Kunnallisvero, kirkollisvero ja sairaanhoitomaksu {n2(V.sairaanhoitomaksu_palkka_prosentti)} % lasketaan verotettavasta tulosta kotikunnan ja seurakunnan prosentilla. Työtulovähennys ({n2(V.tyotulovahennys.prosentti)} % palkasta, enintään {$(V.tyotulovahennys.enimmaismaara)} + {$(V.tyotulovahennys.lapsikorotus)} jokaisesta alaikäisestä lapsesta, pienenee {n2(V.tyotulovahennys.pienenemisprosentti)} % puhtaan ansiotulon {$(V.tyotulovahennys.pienenemisraja)}–{$(V.tyotulovahennys.pienenemisen_ylaraja)} väliltä) vähennetään ensin valtionverosta ja ylijäämä muista veroista niiden suhteessa. Yle-vero on {n2(V.yle.prosentti)} % yli {$(V.yle.tuloraja)} menevästä tulosta, enintään {$(V.yle.enimmaismaara)}. Jokainen vero pyöristetään senttiin ennen yhteenlaskua, kuten Verohallinto tekee.</p>
+    <p>Verokortin veroprosentti on verojen osuus vuositulosta pyöristettynä ylöspäin puolen prosenttiyksikön tarkkuudella. Lisäprosentti tulee Verohallinnon lisäprosenttiasteikosta, johon lisätään kunnan ja seurakunnan prosentti sekä sairausvakuutusmaksut. Kuukauden nettopalkka on palkka miinus verokortin pidätys miinus työntekijän maksut; vuoden todellinen netto ja arvioitu veronpalautus näytetään erikseen.</p>
+    <h2>Ahvenanmaa</h2>
+    <p>Ahvenanmaan {AHVENANMAAN_KUNTIA} kunnassa valtion veroasteikon prosentteja alennetaan {n2(V.ahvenanmaa_asteikon_alennus_prosenttiyksikkoa)} prosenttiyksiköllä, kunnallisverotuksen perusvähennys on {$(V.ahvenanmaa_perusvahennys.enimmaismaara)} ({n2(V.ahvenanmaa_perusvahennys.pienenemisprosentti)} % pieneneminen) ja Yle-veron sijaan peritään {$(V.ahvenanmaa_mediamaksu.maara)} mediamaksu yli {$(V.ahvenanmaa_mediamaksu.tuloraja)} tuloista. Ahvenanmaan omia matkakulusääntöjä kunnallisverotuksessa ei mallinneta.</p>
+    <h2>Eläke</h2>
+    <p>Työeläke karttuu {n2(E.karttumaprosentti)} % vuosiansioista {E.karttuma_ika.alkaa}–{E.karttuma_ika.paattyy}-vuotiaana. Arvio on tämän päivän rahassa: oletamme saman palkan eläkeikään asti, ellei työeläkeotteen kertymää anneta. Eläkettä pienennetään syntymävuoden elinaikakertoimella; vahvistettu kerroin on olemassa vuoteen {E.elinaikakerroin_viimeisin.syntymavuosi} syntyneille ({formatNumber(E.elinaikakerroin_viimeisin.arvo, 5, lang)}), ja myöhemmin syntyneille käytämme sitä arviona. Eläkeiät 1956–1964 syntyneille ovat vahvistettuja, myöhemmille tyoelake.fi:n virallisen laskurin ennusteita. Lykkäyskorotus on {n2(E.lykkayskorotus_prosentti_kk)} % kuukaudessa.</p>
+    <p>Kansaneläke: täysi {$(E.kansanelake.yksin_kk, 2)} (yksin) tai {$(E.kansanelake.parisuhde_kk, 2)} (parisuhde) kuukaudessa, josta vähennetään puolet muiden eläkkeiden {$(E.kansanelake.vahentamaton_raja_v)} vuodessa ylittävästä osasta. Takuueläke täydentää kaikki eläkkeet {$(E.takuuelake.taysi_kk, 2)}:oon. Eläkkeen verossa käytetään eläketulovähennystä ({$(E.elaketulovahennys.taysi)}, pienenee {n2(E.elaketulovahennys.pienenemis_prosentti)} % ja {$(E.elaketulovahennys.toinen_raja)} jälkeen {n2(E.elaketulovahennys.toinen_pienenemis_prosentti)} %) ja sairaanhoitomaksua {n2(V.sairaanhoitomaksu_muu_tulo_prosentti)} %.</p>
+    <h2>Kelan tuet ja työttömyys</h2>
+    <ul>
+      <li>Yleinen asumistuki: {A.tukiprosentti} % × (hyväksytyt asumismenot − perusomavastuu); perusomavastuu = {formatNumber(A.perusomavastuu.kerroin, 1, lang)} × [tulot − ({A.perusomavastuu.perus} + {A.perusomavastuu.aikuinen} × aikuiset + {A.perusomavastuu.lapsi} × lapset)]; enimmäisasumismenot kuntaryhmän ja henkilömäärän mukaan; vesi {$(A.vesimaksu_henkilo)} henkilöltä; alle {$(A.pienin_maksettava)} tukea ei makseta.</li>
+      <li>Ansiopäiväraha: perusosa {$(T.perusosa_pv, 2)} + {T.ansio_osa_prosentti} % päiväpalkan ja perusosan erotuksesta, {T.ansio_osa_yli_taitekohdan} % taitekohdan ({T.taitekohta_kerroin} × perusosa kuukaudessa) ylittävältä osalta; päiväpalkka = kuukausipalkka × (1 − {n2(T.vahennettava_prosentti)} %) ÷ {formatNumber(T.tyopaivia_kuukaudessa, 1, lang)}; enintään {T.enintaan_prosentti_paivapalkasta} % päiväpalkasta; porrastus {T.porrastus[0].prosentti} % ja {T.porrastus[1].prosentti} %.</li>
+      <li>Vanhempainraha: vuositulo − {n2(VR.vakuutusmaksuvahennys_prosentti)} %, sitten {VR.prosentit[0]} % / {VR.prosentit[1]} % / {VR.prosentit[2]} % porrastettuna rajoilla {$(VR.rajat[1])} ja {$(VR.rajat[2])}, jaettuna {VR.jakaja}:lla; vähintään {$(VR.vahimmais_pv, 2)} arkipäivältä.</li>
+      <li>Kotitalousvähennys: {K.voimassa.yritys_prosentti} % työn osuudesta (palkasta {K.voimassa.palkka_prosentti} %), omavastuu {$(K.voimassa.omavastuu)}, enintään {$(K.voimassa.enimmaismaara)} henkilöltä; hallituksen esitys ({K.esitys_2026_2027.yritys_prosentti} %, {$(K.esitys_2026_2027.enimmaismaara)}) näytetään erikseen, koska se ei ole vielä laki.</li>
+    </ul>
+    <h2>Tarkistukset, jotka estävät julkaisun</h2>
+    <ul>
+      <li><strong>{VERO_ESIMERKKEJA} Verohallinnon esimerkkiä vuodelta 2026</strong> (palkka, etuus ja eläke 10 000–70 000 euroa, Helsinki, kirkon jäsen): verot täsmäävät enintään 2 sentin erolla, palkan veroprosentit täsmälleen.</li>
+      <li><strong>{pensionEsim} Kelan esimerkkiä</strong> kansaneläkkeestä ja takuueläkkeestä (yksin ja parisuhteessa) sentilleen.</li>
+      <li><strong>{T.tyj_taulukko.length} riviä TYJ:n ansiopäivärahataulukosta 2026</strong> täydestä ja porrastetusta päivärahasta enintään euron erolla.</li>
+      <li>Kelan asumistukiesimerkit (Jaakko {$(A.esimerkit[0].tuki, 2)}, Eino ja Elisa {$(A.esimerkit[1].tuki, 2)}) ja Kelan tulorajat; Verohallinnon kotitalousvähennysesimerkit; ETK:n elinaikakerroin- ja osittaisen varhennetun vanhuuseläkkeen esimerkit.</li>
+      <li>Rajatapaukset erikseen: tulo 0, päivärahamaksun tuloraja, ikärajat, Ahvenanmaa, varallisuusraja, 90 prosentin katto.</li>
+    </ul>
+    <h2>Mitä laskurit eivät tee</h2>
+    <ul>
+      <li>Pääomatuloja, alijäämähyvitystä, elatusvelvollisuusvähennystä, merityötuloa ja yrittäjän YEL-tuloa ei lasketa.</li>
+      <li>Kotitalousvähennystä lukuun ottamatta verotuksessa haettavia vähennyksiä (työhuone, kotitoimisto, tulonhankkimiskulut) ei mallinneta.</li>
+      <li>Rajoitetusti verovelvollisen lähdeveroa (ulkomailla asuvat) ei lasketa; kunnallisveron keskiarvo {n2(V.rajoitetusti_verovelvollisen_kunnallisvero)} % mainitaan tiedoksi.</li>
+      <li>Eläkearvio ei sisällä tulevia indeksikorotuksia eikä ulkomaan eläkkeitä; tarkka kertymä on työeläkeotteella.</li>
+      <li>Asumistuessa ei lasketa eläkkeensaajan asumistukea eikä opintotuen asumislisää.</li>
+    </ul>
+    <h2>Päivitys</h2>
+    <p>Kaikki arvot käydään läpi vähintään {REVIEW_CYCLE_MONTHS} kuukauden välein ja aina, kun Verohallinto, Kela tai sosiaali- ja terveysministeriö vahvistaa uusia arvoja: kuntien veroprosentit marraskuussa, ennakonpidätyksen perusteet marras–joulukuussa, kansaneläkeindeksi ja elinaikakerroin syksyllä. Virheestä voi ilmoittaa osoitteeseen <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; korjaus tarkistetaan lähteestä ja lisätään testeihin. Katso myös <a href={route('editorial', lang)}>toimitusperiaatteet</a>.</p>
+    <h2>Lähteet</h2>
+    <ul>{sources.map((s) => <li><a href={s.url} target="_blank" rel="nofollow noopener noreferrer">{s.label.fi}</a></li>)}</ul>
+    <p class="text-sm">Päivitetty <time datetime={LAST_UPDATED}>{dt(LAST_UPDATED)}</time>.</p>
+  </div>
+  ) : (
+  <div class="prose prose-slate max-w-none">
+    <p>Every legal value on this site sits in a single parameter file, last checked on <time datetime={P.retrieved_at}>{dt(P.retrieved_at)}</time> against official sources: decisions of Vero (the Finnish Tax Administration), acts on Finlex, the Finnish Centre for Pensions (ETK), Kela and the calculation guide of TYJ, the umbrella body of Finnish unemployment funds. Calculators and texts read figures from that file only, so a corrected value changes everywhere at once. Municipal tax rates live in a separate table generated directly from Vero’s decision of {dt(KUNNAT_META.annettu)} ({KUNNAT_META.diaari}), covering all {KUNTIA} municipalities.</p>
+    <h2>Tax on wages and net pay</h2>
+    <p>Net earned income = gross pay − the automatic {$(V.tulonhankkimisvahennys)} income-production deduction − commuting costs above {$(V.matkakulut.omavastuu)} (at most {$(V.matkakulut.enimmaismaara)}) − union and unemployment fund fees. From that we deduct the employee pension contribution ({n2(V.tyoelakemaksu_prosentti)}%), unemployment insurance ({n2(V.tyottomyysvakuutusmaksu_prosentti)}%) and the daily allowance contribution ({n2(V.paivarahamaksu_prosentti)}% once annual earnings reach {$(V.paivarahamaksu_tuloraja)}), and last the basic deduction of {$(V.perusvahennys.enimmaismaara)}, which shrinks by {n2(V.perusvahennys.pienenemisprosentti)}% of income above it. The same taxable income feeds both state and municipal tax.</p>
+    <p>State income tax follows the scale {asteikko}. Municipal tax, church tax and the {n2(V.sairaanhoitomaksu_palkka_prosentti)}% health care contribution use your municipality’s and parish’s rates on taxable income. The earned income tax credit ({n2(V.tyotulovahennys.prosentti)}% of pay, at most {$(V.tyotulovahennys.enimmaismaara)} plus {$(V.tyotulovahennys.lapsikorotus)} per child under 18, shrinking by {n2(V.tyotulovahennys.pienenemisprosentti)}% of net income between {$(V.tyotulovahennys.pienenemisraja)} and {$(V.tyotulovahennys.pienenemisen_ylaraja)}) comes off state tax first, any remainder off the other taxes in proportion. The Yle tax is {n2(V.yle.prosentti)}% of income above {$(V.yle.tuloraja)}, capped at {$(V.yle.enimmaismaara)}. Each tax is rounded to the cent before adding up, as Vero does.</p>
+    <p>The tax card withholding rate is total tax divided by annual income, rounded up to the next half point. The additional rate comes from Vero’s additional-rate scale plus municipal and parish rates and the health insurance contributions. Monthly net pay is salary minus withholding minus employee contributions; the true annual net and the expected refund are shown separately.</p>
+    <h2>Åland</h2>
+    <p>In the {AHVENANMAAN_KUNTIA} Åland municipalities the state scale percentages are cut by {n2(V.ahvenanmaa_asteikon_alennus_prosenttiyksikkoa)} points, the municipal basic deduction is {$(V.ahvenanmaa_perusvahennys.enimmaismaara)} (shrinking by {n2(V.ahvenanmaa_perusvahennys.pienenemisprosentti)}%), and a {$(V.ahvenanmaa_mediamaksu.maara)} media fee replaces the Yle tax above {$(V.ahvenanmaa_mediamaksu.tuloraja)}. Åland’s own commuting rules in municipal tax are not modelled.</p>
+    <h2>Pension</h2>
+    <p>Earnings-related pension accrues at {n2(E.karttumaprosentti)}% of annual earnings from age {E.karttuma_ika.alkaa} to {E.karttuma_ika.paattyy}. The estimate is in today’s money and assumes the same salary until retirement unless you enter the accrual shown on your pension record. It is reduced by the life expectancy coefficient: a confirmed value exists up to the 1964 cohort ({formatNumber(E.elinaikakerroin_viimeisin.arvo, 5, lang)}), and we use it as an estimate for later cohorts. Retirement ages for 1956 to 1964 are confirmed; later ones are the forecasts of the official tyoelake.fi calculator. Deferral adds {n2(E.lykkayskorotus_prosentti_kk)}% a month.</p>
+    <p>National pension: {$(E.kansanelake.yksin_kk, 2)} a month in full if living alone, {$(E.kansanelake.parisuhde_kk, 2)} in a couple, minus half of other pensions above {$(E.kansanelake.vahentamaton_raja_v)} a year. The guarantee pension tops all pensions up to {$(E.takuuelake.taysi_kk, 2)}. Pension tax applies the pension income deduction ({$(E.elaketulovahennys.taysi)}, shrinking by {n2(E.elaketulovahennys.pienenemis_prosentti)}% and above {$(E.elaketulovahennys.toinen_raja)} by {n2(E.elaketulovahennys.toinen_pienenemis_prosentti)}%) and a {n2(V.sairaanhoitomaksu_muu_tulo_prosentti)}% health care contribution.</p>
+    <h2>Kela benefits and unemployment</h2>
+    <ul>
+      <li>General housing allowance: {A.tukiprosentti}% × (accepted housing costs − basic deductible); deductible = {formatNumber(A.perusomavastuu.kerroin, 1, lang)} × [income − ({A.perusomavastuu.perus} + {A.perusomavastuu.aikuinen} × adults + {A.perusomavastuu.lapsi} × children)]; maximum costs by municipality group and household size; water {$(A.vesimaksu_henkilo)} per person; nothing paid under {$(A.pienin_maksettava)}.</li>
+      <li>Earnings-related unemployment allowance: basic part {$(T.perusosa_pv, 2)} + {T.ansio_osa_prosentti}% of the gap between daily wage and basic part, {T.ansio_osa_yli_taitekohdan}% above the break point ({T.taitekohta_kerroin} × basic part per month); daily wage = monthly pay × (1 − {n2(T.vahennettava_prosentti)}%) ÷ {formatNumber(T.tyopaivia_kuukaudessa, 1, lang)}; at most {T.enintaan_prosentti_paivapalkasta}% of the daily wage; step-downs to {T.porrastus[0].prosentti}% and {T.porrastus[1].prosentti}%.</li>
+      <li>Parental allowance: annual income − {n2(VR.vakuutusmaksuvahennys_prosentti)}%, then {VR.prosentit[0]}% / {VR.prosentit[1]}% / {VR.prosentit[2]}% in bands split at {$(VR.rajat[1])} and {$(VR.rajat[2])}, divided by {VR.jakaja}; at least {$(VR.vahimmais_pv, 2)} per working day.</li>
+      <li>Household tax credit: {K.voimassa.yritys_prosentti}% of the labour cost ({K.voimassa.palkka_prosentti}% of wages you pay), {$(K.voimassa.omavastuu)} deductible, at most {$(K.voimassa.enimmaismaara)} per person; the government proposal ({K.esitys_2026_2027.yritys_prosentti}%, {$(K.esitys_2026_2027.enimmaismaara)}) is shown separately because it is not law yet.</li>
+    </ul>
+    <h2>Checks that block every release</h2>
+    <ul>
+      <li><strong>{VERO_ESIMERKKEJA} official 2026 examples from Vero</strong> (wages, benefits and pensions from €10,000 to €70,000, Helsinki, church member): taxes match within 2 cents, wage withholding rates exactly.</li>
+      <li><strong>{pensionEsim} Kela examples</strong> of national and guarantee pensions (single and couple), to the cent.</li>
+      <li><strong>{T.tyj_taulukko.length} rows of TYJ’s 2026 allowance table</strong>, full and stepped-down, within one euro.</li>
+      <li>Kela’s housing allowance examples ({$(A.esimerkit[0].tuki, 2)} and {$(A.esimerkit[1].tuki, 2)}) and income limits; Vero’s household credit examples; ETK’s life expectancy and partial early pension examples.</li>
+      <li>Edge cases one by one: zero income, the daily allowance contribution threshold, age limits, Åland, the asset limit, the 90% cap.</li>
+    </ul>
+    <h2>What the calculators do not do</h2>
+    <ul>
+      <li>Capital income, deficit credit, maintenance deduction, seafarer’s income and self-employed YEL income are not modelled.</li>
+      <li>Apart from the household credit, deductions you claim in your tax return (home office, work expenses) are not included.</li>
+      <li>Tax at source for non-residents is not computed; the average municipal rate of {n2(V.rajoitetusti_verovelvollisen_kunnallisvero)}% is quoted for reference.</li>
+      <li>The pension estimate leaves out future index rises and foreign pensions; your pension record shows the exact accrual.</li>
+      <li>The housing calculator covers the general housing allowance, not the pensioners’ allowance or the student housing supplement.</li>
+    </ul>
+    <h2>Updates</h2>
+    <p>All values are reviewed at least every {REVIEW_CYCLE_MONTHS} months and whenever Vero, Kela or the Ministry of Social Affairs and Health confirms new figures: municipal rates in November, withholding rules in November and December, the national pension index and life expectancy coefficient in the autumn. Report an error to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; we check it against the source, fix it and add it to the tests. See also the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+    <h2>Sources</h2>
+    <ul>{sources.map((s) => <li><a href={s.url} target="_blank" rel="nofollow noopener noreferrer">{s.label.en}</a></li>)}</ul>
+    <p class="text-sm">Updated <time datetime={LAST_UPDATED}>{dt(LAST_UPDATED)}</time>.</p>
+  </div>
+  )}
+</PageLayout>

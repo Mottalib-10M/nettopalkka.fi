@@ -1,0 +1,15 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title="Cookies: Finland Money Calculators sets none at the moment" description="Which cookies the Finnish net pay, tax, pension and Kela calculators set: none. What would change if analytics were added, and how your consent would be asked first." lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Cookies</h1>
+    <p>Supplement to the <a href={route('privacy', lang)}>privacy policy</a>.</p>
+    <h2>No cookies at present</h2><p>The calculators run entirely in your browser and set no cookies. There is no analytics, no advertising and no social media embed.</p>
+    <h2>If that changes</h2><p>Analytics or advertising would load only after your consent, through a banner that also lets you refuse and withdraw later; this page would then list each cookie and how long it lasts.</p>
+    <p>Questions: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Last updated: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

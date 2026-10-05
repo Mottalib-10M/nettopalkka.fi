@@ -1,0 +1,15 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fi';
+---
+<PageLayout title="Evästeet: Laskurit Suomi ei tällä hetkellä aseta yhtään evästettä" description="Mitä evästeitä nettopalkka-, vero-, eläke- ja Kela-laskurit asettavat: eivät mitään. Mitä muuttuisi, jos kävijämittaus lisättäisiin, ja miten suostumusta silloin kysytään." lang={lang} noindex={true} breadcrumbs={[{ label: 'Evästeet' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Evästeet</h1>
+    <p>Täydentää <a href={route('privacy', lang)}>tietosuojaselostetta</a>.</p>
+    <h2>Ei evästeitä tällä hetkellä</h2><p>Laskurit toimivat kokonaan selaimessasi eivätkä aseta evästeitä. Sivustolla ei ole kävijämittausta, mainoksia eikä sosiaalisen median upotuksia.</p>
+    <h2>Jos tämä muuttuu</h2><p>Kävijämittaus tai mainonta latautuisi vasta suostumuksesi jälkeen bannerin kautta, josta voit myös kieltäytyä ja jonka voit myöhemmin perua. Tälle sivulle lisättäisiin silloin jokainen eväste ja sen voimassaoloaika.</p>
+    <p>Kysymykset: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Päivitetty {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

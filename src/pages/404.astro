@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { route as r0, ROUTES } from '../i18n/routes';
+const route = (id: string, l: 'fi' | 'en') => (ROUTES.some((x) => x.id === id) ? r0(id, l) : r0('home', l));
+---
+<BaseLayout title="Sivua ei löytynyt · Page not found" description="Sivua ei löytynyt. This page does not exist." lang="fi" noindex={true}>
+  <div class="mx-auto max-w-3xl px-4 py-16">
+    <h1 class="text-3xl font-bold text-navy-900">Sivua ei löytynyt</h1>
+    <p class="mt-4 text-navy-700">Osoite on voinut muuttua. Useimmin haetaan <a class="underline" href={route('home', 'fi')}>nettopalkkaa kunnittain</a>, <a class="underline" href={route('veroprosenttilaskuri', 'fi')}>veroprosenttia</a> ja <a class="underline" href={route('elakelaskuri', 'fi')}>eläkkeen määrää</a>.</p>
+    <p class="mt-6 text-navy-700" lang="en">This page does not exist. Try <a class="underline" href={route('home', 'en')}>net salary by municipality</a>, the <a class="underline" href={route('veroprosenttilaskuri', 'en')}>tax rate calculator</a> or the <a class="underline" href={route('elakelaskuri', 'en')}>pension calculator</a>.</p>
+  </div>
+</BaseLayout>

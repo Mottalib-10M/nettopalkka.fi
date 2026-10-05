@@ -1,0 +1,20 @@
+{
+ "accent": "#002F6C",
+ "symbol": "€",
+ "variants": [
+  {
+   "file": "og-fi.png",
+   "title": "Nettopalkka 2026 kunnittain",
+   "subtitle": "308 kunnan veroprosentit · eläke · Kelan tuet",
+   "badge": "2026",
+   "brand": "Laskurit Suomi"
+  },
+  {
+   "file": "og-en.png",
+   "title": "Net salary in Finland 2026",
+   "subtitle": "All 308 municipal tax rates · pension · Kela",
+   "badge": "2026",
+   "brand": "Finland Money Calculators"
+  }
+ ]
+}

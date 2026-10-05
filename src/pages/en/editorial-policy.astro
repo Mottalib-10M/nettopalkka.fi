@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { VERO_ESIMERKKEJA } from '../../lib/esimerkit';
+const lang = 'en';
+---
+<PageLayout title="Editorial Policy: Sources, Checks and How We Fix Errors" description="Where our Finnish pay, tax, pension and Kela figures come from, who answers for them, how often they are checked and what happens after someone reports an error." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy and corrections</h1>
+    <p>People use these figures to compare job offers in different cities, decide where to rent and plan retirement. So we state where each figure comes from, who stands behind it and what happens when one is wrong.</p>
+    <h2>Responsibility</h2><p>Content and calculators are the responsibility of {AUTHOR_NAME}. Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Primary sources only</h2>
+    <p>No value comes from a blog, a forum or another calculator. We read:</p>
+    <ul>
+      <li><strong>Vero decisions</strong>: withholding rules, municipal and parish tax rates, the household tax credit;</li>
+      <li><strong>Acts on Finlex</strong> as in force: Income Tax Act, Employees Pensions Act, Unemployment Security Act, General Housing Allowance Act, Annual Holidays Act;</li>
+      <li><strong>The Finnish Centre for Pensions and Työeläke.fi</strong>: retirement ages, life expectancy coefficient, contributions;</li>
+      <li><strong>Kela and TYJ</strong>: national and guarantee pension, housing allowance, parental allowance, general support and the unemployment allowance formula.</li>
+    </ul>
+    <h2>Tests before every release</h2><p>{VERO_ESIMERKKEJA} Vero tax examples, Kela’s pension tables, TYJ’s allowance table and every threshold run as automatic tests. If one result drifts, nothing is published.</p>
+    <h2>Review cycle</h2><p>A full review at least every {REVIEW_CYCLE_MONTHS} months and whenever a new decision is issued. The date on each page comes from the parameter file.</p>
+    <h2>Handling errors</h2>
+    <ol><li>Check against the primary source.</li><li>Fix the data or code and add a test.</li><li>New date on the page; a significant correction is noted on the page concerned.</li></ol>
+    <h2>Independence</h2><p>We take no money from employers, accounting firms, banks or insurers and recommend no providers. If that ever changes, the text will say so.</p>
+    <p>See also the <a href={route('method', lang)}>calculation method</a>. Version: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

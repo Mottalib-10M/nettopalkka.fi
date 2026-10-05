@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'fi';
+---
+<PageLayout title="Käyttöehdot ja julkaisija: Laskurit Suomen tiedot ja vastuu" description="Laskurit Suomen julkaisija, ylläpito, laskentatulosten luonne ja vastuunrajoitus, tekijänoikeudet ja yhteystiedot. Sivusto on riippumaton, ei viranomaisen palvelu." lang={lang} noindex={true} breadcrumbs={[{ label: 'Käyttöehdot' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Käyttöehdot ja julkaisija</h1>
+    <h2>Julkaisija</h2>
+    <LegalIdentity lang={lang} />
+    <p>Sisällöstä vastaa {AUTHOR_NAME}. Sähköposti: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Sivuston tarkoitus</h2>
+    <p>{SITE_URL} tarjoaa riippumatonta tietoa palkan verotuksesta, eläkkeestä ja Kelan tuista Suomessa sekä maksuttomia laskureita. Sivusto ei ole Verohallinnon, Kelan, Eläketurvakeskuksen tai minkään työttömyyskassan palvelu eikä sidoksissa puolueisiin, etujärjestöihin tai palkanlaskentayrityksiin.</p>
+    <h2>Ylläpito</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>Ei neuvontaa, ei takuuta</h2>
+    <p>Laskurit antavat <strong>arvioita</strong> vuoden 2026 virallisista arvoista, jotka on lueteltu lähteineen ja päivämäärineen <a href={route('method', lang)}>laskentatapa-sivulla</a>. Ne eivät korvaa verokorttia, verotuspäätöstä, Kelan tai eläkelaitoksen päätöstä eivätkä vero- tai oikeusneuvontaa. Vaikka laskenta testataan automaattisesti virallisia esimerkkejä vastaan, emme vastaa päätöksistä, jotka perustuvat pelkästään tämän sivuston tulokseen. Ilmoita virheistä <a href={route('contact', lang)}>yhteystiedot-sivun</a> kautta.</p>
+    <h2>Laskurin upottaminen</h2>
+    <p>Nettopalkkalaskurin voi upottaa maksutta iframe-kehyksenä näkyvän linkin kanssa: katso <a href={route('widget', lang)}>upota laskuri</a>.</p>
+    <h2>Tekijänoikeus</h2>
+    <p>Tekstit, grafiikka ja koodi ovat tekijänoikeuden suojaamia. Lyhyet lainaukset linkin kera ovat tervetulleita. Lait ja viranomaisten arvot ovat julkisia ja mainitaan lähteineen.</p>
+    <h2>Tietosuoja</h2>
+    <p>Syöttämäsi tiedot eivät lähde selaimestasi. Katso <a href={route('privacy', lang)}>tietosuojaseloste</a> ja <a href={route('cookies', lang)}>evästeet</a>.</p>
+    <p class="text-sm">Päivitetty {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

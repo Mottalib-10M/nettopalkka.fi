@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { VERO_ESIMERKKEJA } from '../../lib/esimerkit';
+const lang = 'fi';
+---
+<PageLayout title="Toimitusperiaatteet: lähteet, tarkistukset ja virheiden korjaus" description="Mistä palkan, verojen, eläkkeen ja Kelan tukien arvot tulevat, kuka niistä vastaa, kuinka usein ne tarkistetaan ja mitä tapahtuu, kun joku ilmoittaa virheestä." lang={lang} noindex={true} breadcrumbs={[{ label: 'Toimitusperiaatteet' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Toimitusperiaatteet ja korjaukset</h1>
+    <p>Näillä luvuilla verrataan työtarjouksia, mietitään muuttoa toiseen kuntaan ja suunnitellaan eläkkeelle jäämistä. Siksi kerromme, mistä jokainen luku tulee, kuka siitä vastaa ja mitä tapahtuu, kun luku on väärä.</p>
+    <h2>Vastuu</h2><p>Sisällöstä ja laskureista vastaa {AUTHOR_NAME}. Yhteys: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Vain ensisijaiset lähteet</h2>
+    <p>Yhtään arvoa ei ole otettu blogista, keskustelupalstalta tai toisesta laskurista. Luemme:</p>
+    <ul>
+      <li><strong>Verohallinnon päätökset</strong>: ennakonpidätyksen laskentaperusteet, kuntien ja seurakuntien tuloveroprosentit, kotitalousvähennys;</li>
+      <li><strong>Finlexin lait</strong> voimassa olevina: tuloverolaki, työntekijän eläkelaki, työttömyysturvalaki, laki yleisestä asumistuesta, vuosilomalaki;</li>
+      <li><strong>Eläketurvakeskus ja Työeläke.fi</strong>: eläkeiät, elinaikakerroin, työeläkemaksut;</li>
+      <li><strong>Kela ja TYJ</strong>: kansaneläke, takuueläke, asumistuki, vanhempainraha, yleistuki ja ansiopäivärahan laskenta.</li>
+    </ul>
+    <h2>Testit ennen jokaista julkaisua</h2><p>{VERO_ESIMERKKEJA} Verohallinnon esimerkkiveroa, Kelan eläketaulukot, TYJ:n päivärahataulukko ja kaikki raja-arvot ajetaan automaattisina testeinä. Jos yksikin tulos poikkeaa, mitään ei julkaista.</p>
+    <h2>Tarkistusväli</h2><p>Kaikki arvot käydään läpi vähintään {REVIEW_CYCLE_MONTHS} kuukauden välein ja aina, kun uusi päätös julkaistaan. Sivujen päivämäärä tulee parametritiedostosta.</p>
+    <h2>Virheiden käsittely</h2>
+    <ol><li>Tarkistus ensisijaisesta lähteestä.</li><li>Tiedon tai koodin korjaus ja uusi testi.</li><li>Uusi päivämäärä sivulle; merkittävä korjaus mainitaan kyseisellä sivulla.</li></ol>
+    <h2>Riippumattomuus</h2><p>Emme ota rahaa työnantajilta, tilitoimistoilta, pankeilta emmekä vakuutusyhtiöiltä emmekä suosittele palveluntarjoajia. Jos tämä joskus muuttuu, se kerrotaan tekstissä.</p>
+    <p>Katso myös <a href={route('method', lang)}>laskentatapa</a>. Versio: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

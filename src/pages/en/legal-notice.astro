@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title="Legal Notice: Publisher, Hosting and Limits of Liability" description="Publisher and hosting of Finland Money Calculators, the nature of calculation results, limits of liability, copyright and contact. An independent site, not a government service." lang={lang} noindex={true} breadcrumbs={[{ label: 'Legal notice' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Legal notice</h1>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>Responsible for content: {AUTHOR_NAME}. Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Purpose</h2>
+    <p>{SITE_URL} provides independent information on pay, tax, pensions and Kela benefits in Finland, with free calculators. It is not a service of Vero, Kela, the Finnish Centre for Pensions or any unemployment fund, and it is not linked to any party, interest group or payroll company.</p>
+    <h2>Hosting</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>No advice, no guarantee</h2>
+    <p>The calculators give <strong>estimates</strong> based on the official 2026 values listed with source and date on the <a href={route('method', lang)}>calculation method page</a>. They replace neither your tax card, a tax decision, a Kela or pension decision, nor tax or legal advice. Although tested automatically against official examples, we accept no liability for decisions based solely on a result from this site. Please report errors via the <a href={route('contact', lang)}>contact page</a>.</p>
+    <h2>Embedding</h2>
+    <p>The net pay calculator can be embedded free of charge in an iframe with a visible link: see <a href={route('widget', lang)}>embed a calculator</a>.</p>
+    <h2>Copyright</h2>
+    <p>Texts, graphics and code are protected by copyright. Short quotes with a link to the original page are welcome. Laws and official values are public and quoted with their source.</p>
+    <h2>Privacy</h2>
+    <p>What you type never leaves your browser. See the <a href={route('privacy', lang)}>privacy policy</a> and <a href={route('cookies', lang)}>cookies</a>.</p>
+    <p class="text-sm">Last updated: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

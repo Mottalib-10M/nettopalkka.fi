@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'en';
+---
+<PageLayout title="Contact: report an error or embed a Finnish pay calculator" description="Write to Finland Money Calculators: an outdated value, a result that differs from your Finnish payslip, a question on the method or embedding a calculator on your site." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contact' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contact</h1>
+    <p>We read every message: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>A result differs from your payslip</h2>
+    <p>Send the calculator’s <strong>share link</strong> (it carries your inputs) and the relevant payslip lines, without your name or personal identity code (henkilötunnus). The usual causes are fringe benefits, an outdated income limit on your tax card, a pay rise during the year or extras from your collective agreement. If the error is ours, we fix it and add the case to our tests, as described in the <a href={route('editorial', lang)}>editorial policy</a>.</p>
+    <h2>Embedding a calculator</h2>
+    <p>Expat associations, union branches, newsrooms and HR teams can embed the net pay calculator for free: the code is on the <a href={route('widget', lang)}>embed page</a>.</p>
+    <h2>What we do not do</h2>
+    <p>No personal tax or legal advice and no review of official decisions. For your own case, Vero, Kela, your pension provider and your unemployment fund are the right contacts.</p>
+    <h2>Response time</h2><p>Usually within five working days, error reports first. Every value is reviewed at least every {REVIEW_CYCLE_MONTHS} months.</p>
+    <h2>Publisher</h2>
+    <LegalIdentity lang={lang} />
+    <p>See the <a href={route('terms', lang)}>legal notice</a>. Responsible: {AUTHOR_NAME}. Last updated: {LAST_UPDATED}.</p>
+  </div>
+</PageLayout>

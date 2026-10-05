@@ -1,0 +1,2165 @@
+{
+ "vuosi": 2026,
+ "lahde": "https://www.vero.fi/syventavat-vero-ohjeet/paatokset/47465/kuntien-ja-seurakuntien-tuloveroprosentit-vuonna-2026/",
+ "annettu": "2025-11-18",
+ "diaari": "VH/6585/00.01.00/2025",
+ "haettu": "2026-10-05",
+ "kunnat": [
+  {
+   "nimi": "Akaa",
+   "kunta": 9.9,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Alajärvi",
+   "kunta": 9.1,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Alavieska",
+   "kunta": 9.3,
+   "evl": 1.8,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Alavus",
+   "kunta": 9.6,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Asikkala",
+   "kunta": 8.1,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Askola",
+   "kunta": 9.2,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Aura",
+   "kunta": 8.9,
+   "evl": 1.3,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Brändö",
+   "kunta": 17.7,
+   "evl": 2.0,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Eckerö",
+   "kunta": 18.5,
+   "evl": 1.8,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Enonkoski",
+   "kunta": 8.4,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Enontekiö",
+   "kunta": 8.7,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Espoo",
+   "kunta": 5.3,
+   "evl": 1.0,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Eura",
+   "kunta": 9.4,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Eurajoki",
+   "kunta": 6.4,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Evijärvi",
+   "kunta": 9.8,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Finström",
+   "kunta": 19.0,
+   "evl": 1.95,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Forssa",
+   "kunta": 8.5,
+   "evl": 1.4,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Föglö",
+   "kunta": 18.5,
+   "evl": 2.0,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Geta",
+   "kunta": 18.5,
+   "evl": 1.95,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Haapajärvi",
+   "kunta": 10.2,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Haapavesi",
+   "kunta": 9.4,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hailuoto",
+   "kunta": 8.9,
+   "evl": 1.8,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Halsua",
+   "kunta": 10.5,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hamina",
+   "kunta": 9.4,
+   "evl": 1.55,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hammarland",
+   "kunta": 18.0,
+   "evl": 1.8,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Hankasalmi",
+   "kunta": 9.4,
+   "evl": 1.95,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hanko",
+   "kunta": 9.1,
+   "evl": 1.6,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Harjavalta",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hartola",
+   "kunta": 9.2,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hattula",
+   "kunta": 8.4,
+   "evl": 1.45,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hausjärvi",
+   "kunta": 9.3,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Heinola",
+   "kunta": 8.2,
+   "evl": 1.45,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Heinävesi",
+   "kunta": 9.5,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Helsinki",
+   "kunta": 5.3,
+   "evl": 1.0,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hirvensalmi",
+   "kunta": 7.4,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hollola",
+   "kunta": 8.3,
+   "evl": 1.7,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Huittinen",
+   "kunta": 9.4,
+   "evl": 1.65,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Humppila",
+   "kunta": 9.8,
+   "evl": 1.8,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hyrynsalmi",
+   "kunta": 9.0,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hyvinkää",
+   "kunta": 7.7,
+   "evl": 1.25,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hämeenkyrö",
+   "kunta": 10.2,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Hämeenlinna",
+   "kunta": 8.4,
+   "evl": 1.3,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ii",
+   "kunta": 8.9,
+   "evl": 1.5,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Iisalmi",
+   "kunta": 7.9,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Iitti",
+   "kunta": 8.6,
+   "evl": 1.65,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ikaalinen",
+   "kunta": 9.9,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ilmajoki",
+   "kunta": 9.2,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ilomantsi",
+   "kunta": 8.6,
+   "evl": 1.6,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Imatra",
+   "kunta": 8.6,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Inari",
+   "kunta": 6.4,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Inkoo",
+   "kunta": 8.9,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Isojoki",
+   "kunta": 9.8,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Isokyrö",
+   "kunta": 9.5,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Janakkala",
+   "kunta": 8.9,
+   "evl": 1.65,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Joensuu",
+   "kunta": 8.1,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Jokioinen",
+   "kunta": 9.0,
+   "evl": 1.8,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Jomala",
+   "kunta": 17.5,
+   "evl": 1.7,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Joroinen",
+   "kunta": 8.6,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Joutsa",
+   "kunta": 9.0,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Juuka",
+   "kunta": 8.5,
+   "evl": 1.7,
+   "ort": 1.85,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Juupajoki",
+   "kunta": 8.4,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Juva",
+   "kunta": 9.1,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Jyväskylä",
+   "kunta": 8.1,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Jämijärvi",
+   "kunta": 10.0,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Jämsä",
+   "kunta": 9.4,
+   "evl": 1.55,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Järvenpää",
+   "kunta": 7.8,
+   "evl": 1.25,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kaarina",
+   "kunta": 7.6,
+   "evl": 1.2,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kaavi",
+   "kunta": 9.9,
+   "evl": 1.45,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kajaani",
+   "kunta": 8.4,
+   "evl": 1.6,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kalajoki",
+   "kunta": 8.3,
+   "evl": 1.6,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kangasala",
+   "kunta": 9.4,
+   "evl": 1.35,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kangasniemi",
+   "kunta": 9.4,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kankaanpää",
+   "kunta": 9.1,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kannonkoski",
+   "kunta": 9.2,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kannus",
+   "kunta": 9.7,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Karijoki",
+   "kunta": 9.8,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Karkkila",
+   "kunta": 9.1,
+   "evl": 1.5,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Karstula",
+   "kunta": 9.0,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Karvia",
+   "kunta": 8.9,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kaskinen",
+   "kunta": 10.3,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kauhajoki",
+   "kunta": 9.6,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kauhava",
+   "kunta": 9.1,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kauniainen",
+   "kunta": 4.7,
+   "evl": 1.0,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kaustinen",
+   "kunta": 9.9,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Keitele",
+   "kunta": 8.9,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kemi",
+   "kunta": 9.6,
+   "evl": 1.6,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kemijärvi",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Keminmaa",
+   "kunta": 8.6,
+   "evl": 1.35,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kemiönsaari",
+   "kunta": 7.1,
+   "evl": 2.0,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kempele",
+   "kunta": 8.9,
+   "evl": 1.45,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kerava",
+   "kunta": 7.3,
+   "evl": 1.25,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Keuruu",
+   "kunta": 9.1,
+   "evl": 1.8,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kihniö",
+   "kunta": 9.4,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kinnula",
+   "kunta": 9.5,
+   "evl": 1.8,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kirkkonummi",
+   "kunta": 7.1,
+   "evl": 1.25,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kitee",
+   "kunta": 8.1,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kittilä",
+   "kunta": 7.3,
+   "evl": 1.6,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kiuruvesi",
+   "kunta": 9.5,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kivijärvi",
+   "kunta": 9.1,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kokemäki",
+   "kunta": 9.2,
+   "evl": 1.85,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kokkola",
+   "kunta": 9.2,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kolari",
+   "kunta": 8.4,
+   "evl": 1.8,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Konnevesi",
+   "kunta": 9.8,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kontiolahti",
+   "kunta": 8.8,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Korsnäs",
+   "kunta": 9.2,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Koski Tl",
+   "kunta": 7.4,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kotka",
+   "kunta": 9.4,
+   "evl": 1.5,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kouvola",
+   "kunta": 8.9,
+   "evl": 1.55,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kristiinankaupunki",
+   "kunta": 8.9,
+   "evl": 2.0,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kruunupyy",
+   "kunta": 8.9,
+   "evl": 2.0,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kuhmo",
+   "kunta": 9.4,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kuhmoinen",
+   "kunta": 9.1,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kumlinge",
+   "kunta": 19.3,
+   "evl": 2.0,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Kuopio",
+   "kunta": 8.1,
+   "evl": 1.45,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kuortane",
+   "kunta": 8.4,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kurikka",
+   "kunta": 8.4,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kustavi",
+   "kunta": 5.3,
+   "evl": 1.8,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kuusamo",
+   "kunta": 8.6,
+   "evl": 1.55,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kyyjärvi",
+   "kunta": 9.9,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kärkölä",
+   "kunta": 9.4,
+   "evl": 1.7,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kärsämäki",
+   "kunta": 9.5,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Kökar",
+   "kunta": 19.7,
+   "evl": 2.0,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Lahti",
+   "kunta": 8.6,
+   "evl": 1.45,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Laihia",
+   "kunta": 9.6,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Laitila",
+   "kunta": 8.4,
+   "evl": 1.6,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lapinjärvi",
+   "kunta": 8.9,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lapinlahti",
+   "kunta": 9.4,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lappajärvi",
+   "kunta": 9.4,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lappeenranta",
+   "kunta": 8.3,
+   "evl": 1.4,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lapua",
+   "kunta": 8.9,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Laukaa",
+   "kunta": 9.9,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lemi",
+   "kunta": 9.9,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lemland",
+   "kunta": 17.8,
+   "evl": 1.7,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Lempäälä",
+   "kunta": 8.4,
+   "evl": 1.45,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Leppävirta",
+   "kunta": 8.4,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lestijärvi",
+   "kunta": 9.4,
+   "evl": 2.0,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lieksa",
+   "kunta": 8.4,
+   "evl": 1.55,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lieto",
+   "kunta": 7.1,
+   "evl": 1.3,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Liminka",
+   "kunta": 9.4,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Liperi",
+   "kunta": 9.5,
+   "evl": 1.6,
+   "ort": 1.85,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lohja",
+   "kunta": 7.9,
+   "evl": 1.5,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Loimaa",
+   "kunta": 8.4,
+   "evl": 1.55,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Loppi",
+   "kunta": 8.9,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Loviisa",
+   "kunta": 8.1,
+   "evl": 1.65,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Luhanka",
+   "kunta": 5.9,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lumijoki",
+   "kunta": 8.9,
+   "evl": 1.95,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Lumparland",
+   "kunta": 19.5,
+   "evl": 1.7,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Luoto",
+   "kunta": 8.3,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Luumäki",
+   "kunta": 9.3,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Maalahti",
+   "kunta": 8.9,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Maarianhamina",
+   "kunta": 17.0,
+   "evl": 1.55,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Marttila",
+   "kunta": 8.8,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Masku",
+   "kunta": 8.5,
+   "evl": 1.6,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Merijärvi",
+   "kunta": 10.1,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Merikarvia",
+   "kunta": 8.9,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Miehikkälä",
+   "kunta": 10.1,
+   "evl": 1.55,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Mikkeli",
+   "kunta": 9.4,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Muhos",
+   "kunta": 9.4,
+   "evl": 1.65,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Multia",
+   "kunta": 9.8,
+   "evl": 1.8,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Muonio",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Mustasaari",
+   "kunta": 8.9,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Muurame",
+   "kunta": 6.9,
+   "evl": 1.55,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Mynämäki",
+   "kunta": 9.1,
+   "evl": 1.65,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Myrskylä",
+   "kunta": 9.9,
+   "evl": 1.85,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Mäntsälä",
+   "kunta": 8.3,
+   "evl": 1.25,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Mänttä-Vilppula",
+   "kunta": 9.9,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Mäntyharju",
+   "kunta": 8.5,
+   "evl": 1.9,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Naantali",
+   "kunta": 6.4,
+   "evl": 1.35,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Nakkila",
+   "kunta": 9.1,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Nivala",
+   "kunta": 9.9,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Nokia",
+   "kunta": 8.4,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Nousiainen",
+   "kunta": 9.1,
+   "evl": 1.55,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Nurmes",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 1.85,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Nurmijärvi",
+   "kunta": 7.9,
+   "evl": 1.45,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Närpiö",
+   "kunta": 8.4,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Orimattila",
+   "kunta": 8.7,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Oripää",
+   "kunta": 8.4,
+   "evl": 1.75,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Orivesi",
+   "kunta": 9.4,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Oulainen",
+   "kunta": 10.0,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Oulu",
+   "kunta": 8.1,
+   "evl": 1.3,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Outokumpu",
+   "kunta": 8.9,
+   "evl": 1.6,
+   "ort": 1.85,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Padasjoki",
+   "kunta": 8.4,
+   "evl": 1.7,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Paimio",
+   "kunta": 8.2,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Paltamo",
+   "kunta": 9.4,
+   "evl": 1.65,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Parainen",
+   "kunta": 7.9,
+   "evl": 1.6,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Parikkala",
+   "kunta": 9.5,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Parkano",
+   "kunta": 9.4,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pedersören kunta",
+   "kunta": 9.3,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pelkosenniemi",
+   "kunta": 9.1,
+   "evl": 1.95,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pello",
+   "kunta": 9.5,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Perho",
+   "kunta": 9.3,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Petäjävesi",
+   "kunta": 9.9,
+   "evl": 1.9,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pieksämäki",
+   "kunta": 9.4,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pielavesi",
+   "kunta": 9.1,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pietarsaari",
+   "kunta": 9.0,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pihtipudas",
+   "kunta": 8.9,
+   "evl": 1.8,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pirkkala",
+   "kunta": 7.9,
+   "evl": 1.4,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Polvijärvi",
+   "kunta": 9.0,
+   "evl": 1.6,
+   "ort": 1.85,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pomarkku",
+   "kunta": 10.9,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pori",
+   "kunta": 8.7,
+   "evl": 1.5,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pornainen",
+   "kunta": 8.3,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Porvoo",
+   "kunta": 7.1,
+   "evl": 1.4,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Posio",
+   "kunta": 9.1,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pudasjärvi",
+   "kunta": 9.5,
+   "evl": 1.5,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pukkila",
+   "kunta": 10.4,
+   "evl": 1.75,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Punkalaidun",
+   "kunta": 9.4,
+   "evl": 1.7,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Puolanka",
+   "kunta": 8.9,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Puumala",
+   "kunta": 6.6,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pyhtää",
+   "kunta": 8.1,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pyhäjoki",
+   "kunta": 7.9,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pyhäjärvi",
+   "kunta": 9.1,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pyhäntä",
+   "kunta": 8.0,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pyhäranta",
+   "kunta": 9.1,
+   "evl": 1.9,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pälkäne",
+   "kunta": 8.9,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Pöytyä",
+   "kunta": 8.6,
+   "evl": 1.75,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Raahe",
+   "kunta": 9.1,
+   "evl": 1.9,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Raasepori",
+   "kunta": 9.3,
+   "evl": 1.5,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Raisio",
+   "kunta": 7.6,
+   "evl": 1.15,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rantasalmi",
+   "kunta": 9.4,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ranua",
+   "kunta": 8.1,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rauma",
+   "kunta": 7.9,
+   "evl": 1.5,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rautalampi",
+   "kunta": 9.9,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rautavaara",
+   "kunta": 9.4,
+   "evl": 1.8,
+   "ort": 1.85,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rautjärvi",
+   "kunta": 8.5,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Reisjärvi",
+   "kunta": 10.2,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Riihimäki",
+   "kunta": 7.9,
+   "evl": 1.3,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ristijärvi",
+   "kunta": 9.3,
+   "evl": 1.65,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rovaniemi",
+   "kunta": 8.9,
+   "evl": 1.4,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ruokolahti",
+   "kunta": 8.6,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ruovesi",
+   "kunta": 9.4,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rusko",
+   "kunta": 7.3,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Rääkkylä",
+   "kunta": 9.9,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Saarijärvi",
+   "kunta": 9.3,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Salla",
+   "kunta": 8.9,
+   "evl": 1.85,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Salo",
+   "kunta": 8.1,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Saltvik",
+   "kunta": 18.5,
+   "evl": 1.75,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Sastamala",
+   "kunta": 8.9,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sauvo",
+   "kunta": 8.8,
+   "evl": 1.45,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Savitaipale",
+   "kunta": 8.9,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Savonlinna",
+   "kunta": 9.3,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Savukoski",
+   "kunta": 9.1,
+   "evl": 1.95,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Seinäjoki",
+   "kunta": 9.2,
+   "evl": 1.6,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sievi",
+   "kunta": 9.6,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Siikainen",
+   "kunta": 9.4,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Siikajoki",
+   "kunta": 9.4,
+   "evl": 1.9,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Siikalatva",
+   "kunta": 9.3,
+   "evl": 1.9,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Siilinjärvi",
+   "kunta": 9.4,
+   "evl": 1.35,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Simo",
+   "kunta": 9.4,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sipoo",
+   "kunta": 6.8,
+   "evl": 1.35,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Siuntio",
+   "kunta": 8.6,
+   "evl": 1.65,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sodankylä",
+   "kunta": 7.5,
+   "evl": 1.4,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Soini",
+   "kunta": 9.1,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Somero",
+   "kunta": 8.5,
+   "evl": 1.65,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sonkajärvi",
+   "kunta": 8.6,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sotkamo",
+   "kunta": 8.5,
+   "evl": 1.6,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sottunga",
+   "kunta": 18.0,
+   "evl": 2.0,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Sulkava",
+   "kunta": 8.4,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sund",
+   "kunta": 19.0,
+   "evl": 1.95,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Suomussalmi",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Suonenjoki",
+   "kunta": 9.1,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Sysmä",
+   "kunta": 6.4,
+   "evl": 1.7,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Säkylä",
+   "kunta": 8.9,
+   "evl": 1.8,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Taipalsaari",
+   "kunta": 8.4,
+   "evl": 1.75,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Taivalkoski",
+   "kunta": 8.5,
+   "evl": 1.65,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Taivassalo",
+   "kunta": 6.9,
+   "evl": 1.7,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tammela",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tampere",
+   "kunta": 7.6,
+   "evl": 1.25,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tervo",
+   "kunta": 9.9,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tervola",
+   "kunta": 6.9,
+   "evl": 1.75,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Teuva",
+   "kunta": 9.6,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tohmajärvi",
+   "kunta": 9.1,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Toholampi",
+   "kunta": 9.9,
+   "evl": 2.0,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Toivakka",
+   "kunta": 9.4,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tornio",
+   "kunta": 8.7,
+   "evl": 1.45,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Turku",
+   "kunta": 7.1,
+   "evl": 1.2,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tuusniemi",
+   "kunta": 9.9,
+   "evl": 1.45,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tuusula",
+   "kunta": 7.3,
+   "evl": 1.45,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Tyrnävä",
+   "kunta": 9.9,
+   "evl": 1.8,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ulvila",
+   "kunta": 9.4,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Urjala",
+   "kunta": 10.3,
+   "evl": 1.7,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Utajärvi",
+   "kunta": 8.4,
+   "evl": 1.65,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Utsjoki",
+   "kunta": 8.9,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Uurainen",
+   "kunta": 9.2,
+   "evl": 1.95,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Uusikaarlepyy",
+   "kunta": 8.6,
+   "evl": 1.9,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Uusikaupunki",
+   "kunta": 8.9,
+   "evl": 1.5,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vaala",
+   "kunta": 8.3,
+   "evl": 1.65,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vaasa",
+   "kunta": 8.4,
+   "evl": 1.4,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Valkeakoski",
+   "kunta": 9.1,
+   "evl": 1.6,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vantaa",
+   "kunta": 6.4,
+   "evl": 1.0,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Varkaus",
+   "kunta": 9.3,
+   "evl": 1.45,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vehmaa",
+   "kunta": 9.1,
+   "evl": 1.85,
+   "ort": 1.75,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vesanto",
+   "kunta": 9.5,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vesilahti",
+   "kunta": 9.3,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Veteli",
+   "kunta": 9.8,
+   "evl": 1.85,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vieremä",
+   "kunta": 8.4,
+   "evl": 1.8,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vihti",
+   "kunta": 7.8,
+   "evl": 1.45,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Viitasaari",
+   "kunta": 8.4,
+   "evl": 1.8,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vimpeli",
+   "kunta": 9.8,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Virolahti",
+   "kunta": 10.1,
+   "evl": 1.55,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Virrat",
+   "kunta": 8.6,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Vårdö",
+   "kunta": 19.0,
+   "evl": 1.95,
+   "ort": 1.75,
+   "ahvenanmaa": true
+  },
+  {
+   "nimi": "Vöyri",
+   "kunta": 9.2,
+   "evl": 1.95,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ylitornio",
+   "kunta": 8.4,
+   "evl": 1.7,
+   "ort": 2.25,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ylivieska",
+   "kunta": 10.3,
+   "evl": 1.75,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ylöjärvi",
+   "kunta": 9.2,
+   "evl": 1.65,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ypäjä",
+   "kunta": 9.3,
+   "evl": 1.8,
+   "ort": 1.8,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Ähtäri",
+   "kunta": 10.6,
+   "evl": 1.7,
+   "ort": 2.0,
+   "ahvenanmaa": false
+  },
+  {
+   "nimi": "Äänekoski",
+   "kunta": 9.4,
+   "evl": 1.6,
+   "ort": 1.95,
+   "ahvenanmaa": false
+  }
+ ]
+}
