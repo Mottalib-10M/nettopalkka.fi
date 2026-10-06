@@ -4,12 +4,15 @@ import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
 import { route } from '../../i18n/routes';
 const lang = 'fi';
 ---
-<PageLayout title="Evästeet: Nettopalkka ei tällä hetkellä aseta yhtään evästettä" description="Mitä evästeitä nettopalkka-, vero-, eläke- ja Kela-laskurit asettavat: eivät mitään. Mitä muuttuisi, jos kävijämittaus lisättäisiin, ja miten suostumusta silloin kysytään." lang={lang} noindex={true} breadcrumbs={[{ label: 'Evästeet' }]} showAuthor={false}>
+<PageLayout title="Evästeet: Nettopalkka mittaa käyntejä vain suostumuksellasi" description="Mitä evästeitä nettopalkka-, vero-, eläke- ja Kela-laskurit asettavat: ilman suostumusta ei yhtään. Suostumuksella Microsoft Clarity, evästeiden kestot ja peruminen." lang={lang} noindex={true} breadcrumbs={[{ label: 'Evästeet' }]} showAuthor={false}>
   <div class="prose prose-slate max-w-none">
     <h1>Evästeet</h1>
     <p>Täydentää <a href={route('privacy', lang)}>tietosuojaselostetta</a>.</p>
-    <h2>Ei evästeitä tällä hetkellä</h2><p>Laskurit toimivat kokonaan selaimessasi eivätkä aseta evästeitä. Sivustolla ei ole kävijämittausta, mainoksia eikä sosiaalisen median upotuksia.</p>
-    <h2>Jos tämä muuttuu</h2><p>Kävijämittaus tai mainonta latautuisi vasta suostumuksesi jälkeen bannerin kautta, josta voit myös kieltäytyä ja jonka voit myöhemmin perua. Tälle sivulle lisättäisiin silloin jokainen eväste ja sen voimassaoloaika.</p>
+    <h2>Ilman suostumusta ei evästeitä</h2><p>Laskurit toimivat kokonaan selaimessasi eivätkä itse aseta evästeitä. Ennen kuin hyväksyt kävijämittauksen bannerissa, sivusto ei lataa mittaustyökalua eikä tallenna muuta kuin valintasi.</p>
+    <h2>Välttämätön tallennus</h2><p>Bannerissa tekemäsi valinta tallennetaan selaimesi <code>localStorage</code>-muistiin avaimella <code>consent-choice</code>, jotta sitä ei kysytä jokaisella käynnillä. Se ei sisällä tunnistetta eikä lähde laitteeltasi.</p>
+    <h2>Kävijämittaus vain suostumuksella: Microsoft Clarity</h2><p>Kun hyväksyt, sivusto lataa Microsoft Clarityn, jonka tarjoaa Microsoft Ireland Operations Limited. Clarity näyttää nimettöminä istuntotallenteina ja lämpökarttoina, mitä sivuja avataan, mihin klikataan ja kuinka pitkälle vieritetään. Palkka, kotikunta, lapset ja muut syötteet peitetään selaimessa ennen kuin mitään lähetetään. Evästeet: <code>_clck</code> (vuosi) ja <code>_clsk</code> (vuorokausi); Microsoftin omilla verkkotunnuksilla voi lisäksi syntyä <code>MUID</code> ja <code>CLID</code>. Jos saavut jaetun linkin kautta, jonka osoitteessa on syötteitä, myös tämä saapumisosoite tallentuu.</p>
+    <h2>Mainonta</h2><p>Sivustolla ei ole mainoksia, mainosevästeitä eikä sosiaalisen median upotuksia.</p>
+    <h2>Suostumuksen peruminen</h2><p>Sivun alareunan linkki ”Evästeasetukset” avaa bannerin uudelleen: jos kieltäydyt, Clarity ei enää lataudu. Jo asetetut evästeet poistat tyhjentämällä sivuston tiedot selaimen asetuksista. Peruminen vaikuttaa siitä eteenpäin.</p>
     <p>Kysymykset: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Päivitetty {LAST_UPDATED}.</p>
   </div>
 </PageLayout>

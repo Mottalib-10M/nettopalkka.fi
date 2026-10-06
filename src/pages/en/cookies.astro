@@ -4,12 +4,15 @@ import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
 import { route } from '../../i18n/routes';
 const lang = 'en';
 ---
-<PageLayout title="Cookies: Nettopalkka sets none at the moment" description="Which cookies the Finnish net pay, tax, pension and Kela calculators set: none. What would change if analytics were added, and how your consent would be asked first." lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+<PageLayout title="Cookies: Nettopalkka measures visits only with your consent" description="Which cookies the Finnish net pay, tax, pension and Kela calculators set: none without consent. With consent, Microsoft Clarity, its cookie lifetimes and how to withdraw." lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
   <div class="prose prose-slate max-w-none">
     <h1>Cookies</h1>
     <p>Supplement to the <a href={route('privacy', lang)}>privacy policy</a>.</p>
-    <h2>No cookies at present</h2><p>The calculators run entirely in your browser and set no cookies. There is no analytics, no advertising and no social media embed.</p>
-    <h2>If that changes</h2><p>Analytics or advertising would load only after your consent, through a banner that also lets you refuse and withdraw later; this page would then list each cookie and how long it lasts.</p>
+    <h2>Nothing set before you agree</h2><p>The calculators run entirely in your browser and set no cookies themselves. Until you accept audience measurement in the banner, the site loads no measurement tool and stores nothing but your choice.</p>
+    <h2>Strictly necessary storage</h2><p>The choice you make in the banner is saved in your browser’s <code>localStorage</code> under the key <code>consent-choice</code>, so you are not asked on every visit. It holds no identifier and stays on your device.</p>
+    <h2>Audience measurement with consent: Microsoft Clarity</h2><p>When you accept, the site loads Microsoft Clarity, provided by Microsoft Ireland Operations Limited. Through anonymous session recordings and heatmaps, Clarity shows which pages are opened, what is clicked and how far visitors scroll. Salary, municipality, children and other inputs are masked in the browser before anything is sent. Cookies: <code>_clck</code> (one year) and <code>_clsk</code> (one day); <code>MUID</code> and <code>CLID</code> may also appear on Microsoft’s own domains. Arriving through a shared link that carries inputs in its address means that landing address is recorded as well.</p>
+    <h2>Advertising</h2><p>There are no ads, no advertising cookies and no social media embeds on the site.</p>
+    <h2>Changing your mind</h2><p>The “Cookie settings” link at the bottom of each page reopens the banner: decline and Clarity stops loading. Remove cookies already set by clearing the site data in your browser settings. Withdrawal takes effect from that moment.</p>
     <p>Questions: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Last updated: {LAST_UPDATED}.</p>
   </div>
 </PageLayout>
