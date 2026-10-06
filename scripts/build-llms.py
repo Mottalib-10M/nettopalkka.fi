@@ -11,7 +11,7 @@ def meta(p):
     if re.search(r'name="robots" content="noindex', s): return None
     t = re.search(r'<title>(.*?)</title>', s, re.S); d = re.search(r'name="description" content="([^"]*)"', s)
     return html.unescape(t.group(1)).strip(), html.unescape(d.group(1)).strip() if d else ''
-out = ['# Laskurit Suomi / Finland Money Calculators', '',
+out = ['# Nettopalkka', '',
        '> Riippumaton sivusto (Radif Partners): nettopalkka, veroprosentti, eläke ja Kelan tuet Suomessa vuonna 2026, kaikkien 308 kunnan veroprosenteilla. Independent site: Finnish net pay, tax rate, pension and Kela benefits for 2026 with the tax rates of all 308 municipalities.', '',
        'Data: Verohallinnon päätökset 2026 (ennakonpidätys, kuntien ja seurakuntien tuloveroprosentit 18.11.2025), Finlex, Eläketurvakeskus, Kela, TYJ. Laskenta tapahtuu selaimessa.', '']
 for lang, otsikko in (('fi', '## Suomeksi'), ('en', '## In English')):

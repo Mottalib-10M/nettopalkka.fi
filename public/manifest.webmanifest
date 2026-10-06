@@ -1,6 +1,6 @@
 {
- "name": "Laskurit Suomi",
- "short_name": "Laskurit Suomi",
+ "name": "Nettopalkka",
+ "short_name": "Nettopalkka",
  "description": "Nettopalkka, veroprosentti, eläke ja Kelan tuet vuodelle 2026: kaikkien 308 kunnan veroprosentit, suomeksi ja englanniksi.",
  "start_url": "/fi/",
  "display": "standalone",

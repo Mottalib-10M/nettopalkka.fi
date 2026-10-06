@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://fi-laskurit.example";
-export const SITE_NAMES: Record<string, string> = {"fi": "Laskurit Suomi", "en": "Finland Money Calculators"};
+export const SITE_URL = "https://nettopalkka.fi";
+export const SITE_NAMES: Record<string, string> = {"fi": "Nettopalkka", "en": "Nettopalkka"};
 export const LANG_TAGS: Record<string, string> = {"fi": "fi-FI", "en": "en-FI"};
 export const OG_LOCALES: Record<string, string> = {"fi": "fi_FI", "en": "en_GB"};
 export const LOCALE_TAG = 'fi-FI';
@@ -18,7 +18,7 @@ export const AUTHOR_DESC: Record<string, string> = {"fi": "Radif Partners laskee
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"fi": ["Nettopalkka ja palkan verotus", "Veroprosentti ja verokortti", "Kunnallisvero ja kirkollisvero", "Työeläke ja eläkeikä", "Kansaneläke ja takuueläke", "Yleinen asumistuki", "Ansiosidonnainen työttömyyspäiväraha", "Kotitalousvähennys", "Lomaraha ja vuosiloma"], "en": ["Net salary and wage taxation in Finland", "Finnish tax card and withholding rate", "Municipal and church tax in Finland", "Earnings-related pension and retirement age", "Kela national and guarantee pension", "Kela general housing allowance", "Earnings-related unemployment allowance", "Household tax credit", "Holiday pay and holiday bonus"]};
-export const CONTACT_EMAIL = "contact@fi-laskurit.example";
+export const CONTACT_EMAIL = "contact@nettopalkka.fi";
 export const THEME_COLOR = '#002F6C';
 export const LOGO_SYMBOL = '€';
 export const BING_VERIFY_CODE = '';

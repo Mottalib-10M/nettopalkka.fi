@@ -1,4 +1,4 @@
-# Ajouter ou réécrire une page (Laskurit Suomi / Finland Money Calculators)
+# Ajouter ou réécrire une page (Nettopalkka)
 
 Notice pour les agents qui écrivent ou prolongent le site. À lire en entier avant d'écrire une ligne, avec
 `~/Documents/GitHub/RECETTE-SITE.md` (§0, §4.1, §6, §7, §9.3, §11, §17.4, §21, §26).
