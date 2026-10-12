@@ -65,7 +65,7 @@ export default function ElakeLaskuri({ lang = 'fi', methodHref }: { lang?: L; me
             <KirkkoKentta lang={lang} id="e-kirkko" value={kirkko} onChange={setKirkko} />
           </div>
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Nettoeläke kuukaudessa, arvio', 'Estimated net pension per month')} wert={$(n.kkNetto)}
             unter={tx(lang, `Brutto ${$(k.yhteensa)} · työeläke ${formatNumber(korvaus * 100, 0, lang)} % nykyisestä palkasta`, `Gross ${$(k.yhteensa)} · work pension ${formatNumber(korvaus * 100, 0, lang)}% of current pay`)} />
           <Laskelma rows={rivit} />

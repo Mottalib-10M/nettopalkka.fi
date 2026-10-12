@@ -95,7 +95,7 @@ export default function NettoLaskuri({ lang = 'fi', methodHref, preset = {}, pal
             <div className="mt-3"><LisaKentat lang={lang} p={p} set={set} prefix="n" /></div>
           </details>
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Nettopalkka kuukaudessa', 'Net pay per month')} wert={$(r.kkNetto)}
             unter={tx(lang, `Veroprosentti ${formatNumber(r.veroprosentti, 1, lang)} % · lisäprosentti ${formatNumber(lp, 1, lang)} % · tuloraja ${$(vuosi)}`, `Withholding rate ${formatNumber(r.veroprosentti, 1, lang)}% · additional rate ${formatNumber(lp, 1, lang)}% · income limit ${$(vuosi)}`)} />
           <div className="mt-4"><StackedBar segments={segs} total={vuosi} ariaPrefix={tx(lang, 'Palkan jakautuminen', 'Breakdown of pay')} /></div>

@@ -48,7 +48,7 @@ export default function VeroprosenttiLaskuri({ lang = 'fi', methodHref }: { lang
           </div>
           <details className="rounded-lg border border-navy-200 p-3"><summary className="cursor-pointer text-sm font-semibold text-navy-800">{tx(lang, 'Lisäasetukset: ikä, lapset, työmatkat', 'More options: age, children, commuting')}</summary><div className="mt-3"><LisaKentat lang={lang} p={p} set={set} prefix="v" /></div></details>
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Veroprosentti (verokortti)', 'Withholding rate (tax card)')} wert={`${f1(v.veroprosentti)} %`}
             unter={tx(lang, `Lisäprosentti ${f1(lp)} % · tuloraja ${$(palkka)}`, `Additional rate ${f1(lp)}% · income limit ${$(palkka)}`)} />
           {muutos !== null && <p className="mt-2 text-sm text-navy-800">{tx(lang, `Muutosverokortti loppuvuodelle: noin ${f1(muutos)} %.`, `Revised tax card for the rest of the year: about ${f1(muutos)}%.`)}</p>}

@@ -44,7 +44,7 @@ export default function LomarahaLaskuri({ lang = 'fi', methodHref }: { lang?: L;
             help={tx(lang, 'Usein 50 % lomapalkasta; tarkista oma TES.', 'Often 50% of holiday pay; check your agreement.')} />
           <KuntaKentta lang={lang} id="lr-kunta" value={kunta} onChange={setKunta} />
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Lomaraha, brutto', 'Holiday bonus, gross')} wert={$(l.lomaraha)} unter={tx(lang, `Noin ${$(netto)} käteen`, `About ${$(netto)} take-home`)} />
           <Laskelma rows={rivit} />
           <Toiminnot lang={lang} text={() => tx(lang, `Lomaraha ${$(l.lomaraha)} (palkka ${$(palkka)}, ${paivat} lomapäivää)`, `Holiday bonus ${$(l.lomaraha)} (salary ${$(palkka)}, ${paivat} days)`)} />

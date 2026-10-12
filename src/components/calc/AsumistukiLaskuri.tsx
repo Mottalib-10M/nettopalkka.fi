@@ -53,7 +53,7 @@ export default function AsumistukiLaskuri({ lang = 'fi', methodHref, preset = {}
             </div>
           </details>
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Asumistuki kuukaudessa, arvio', 'Estimated housing allowance per month')} wert={$(r.tuki, 2)}
             unter={tx(lang, `Tuloraja tälle ruokakunnalle noin ${$(raja)}/kk`, `Income limit for this household about ${$(raja)}/month`)} />
           <Laskelma rows={rivit} />

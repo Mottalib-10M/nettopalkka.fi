@@ -36,7 +36,7 @@ export default function BruttoLaskuri({ lang = 'fi', methodHref }: { lang?: L; m
           </div>
           <details className="rounded-lg border border-navy-200 p-3"><summary className="cursor-pointer text-sm font-semibold text-navy-800">{tx(lang, 'Lisäasetukset', 'More options')}</summary><div className="mt-3"><LisaKentat lang={lang} p={p} set={set} prefix="b" /></div></details>
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Tarvittava bruttopalkka kuukaudessa', 'Gross monthly salary needed')} wert={$(brutto)} unter={tx(lang, `Veroprosentti ${formatNumber(v.veroprosentti, 1, lang)} % · ${p.kunta}`, `Withholding rate ${formatNumber(v.veroprosentti, 1, lang)}% · ${p.kunta}`)} />
           <Laskelma rows={rivit} />
           <Toiminnot lang={lang} text={() => tx(lang, `${$(netto)} netto vaatii ${$(brutto)} bruttona (${p.kunta})`, `${$(netto)} net needs ${$(brutto)} gross (${p.kunta})`)} />

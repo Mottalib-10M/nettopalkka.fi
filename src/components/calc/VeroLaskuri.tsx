@@ -49,7 +49,7 @@ export default function VeroLaskuri({ lang = 'fi', methodHref }: { lang?: L; met
           </div>
           <details className="rounded-lg border border-navy-200 p-3"><summary className="cursor-pointer text-sm font-semibold text-navy-800">{tx(lang, 'Lisäasetukset: ikä, lapset, työmatkat', 'More options: age, children, commuting')}</summary><div className="mt-3"><LisaKentat lang={lang} p={p} set={set} prefix="vl" /></div></details>
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={ero >= 0 ? tx(lang, 'Veronpalautus, arvio', 'Estimated tax refund') : tx(lang, 'Jäännösvero, arvio', 'Estimated residual tax')} wert={$(Math.abs(ero))}
             unter={tx(lang, `Lopullinen veroaste ${formatNumber(tulo > 0 ? lopullinen / tulo * 100 : 0, 1, lang)} %`, `Final tax rate ${formatNumber(tulo > 0 ? lopullinen / tulo * 100 : 0, 1, lang)}%`)} />
           <Laskelma rows={rivit} />

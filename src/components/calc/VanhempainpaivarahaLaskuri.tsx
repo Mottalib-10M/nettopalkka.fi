@@ -34,7 +34,7 @@ export default function VanhempainpaivarahaLaskuri({ lang = 'fi', methodHref }: 
             help={tx(lang, 'Kela katsoo 12 kalenterikuukautta, kuukauden välein ennen vapaata.', 'Kela looks at 12 calendar months, one month before the leave.')} />
           <NumberField id="vp-lr" label={tx(lang, 'Lomaraha ja muut lisät vuodessa', 'Holiday bonus and extras per year')} value={lomaraha} onChange={setLomaraha} unit="€" max={100000} lang={lang} />
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Vanhempainraha kuukaudessa, arvio', 'Estimated parental allowance per month')} wert={$(r.kk)}
             unter={tx(lang, `${$(r.pv, 2)} arkipäivältä, 6 päivää viikossa (25 pv/kk)`, `${$(r.pv, 2)} per working day, 6 days a week (25 days/month)`)} />
           <Laskelma rows={rivit} />

@@ -37,7 +37,7 @@ export default function KansanelakeLaskuri({ lang = 'fi', methodHref }: { lang?:
             help={tx(lang, 'Täysi kansaneläke, kun asumisaikaa on vähintään 80 % ajasta 16–65 v.', 'Full national pension if you lived here at least 80% of the time from 16 to 65.')} />
           <KuntaKentta lang={lang} id="ke-kunta" value={kunta} onChange={setKunta} />
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Kelan eläkkeet kuukaudessa', 'Kela pensions per month')} wert={$(k.kansanelake + k.takuuelake)} unter={tx(lang, `Kokonaiseläke ${$(k.yhteensa)}`, `Total pension ${$(k.yhteensa)}`)} />
           <Laskelma rows={rivit} />
           <Toiminnot lang={lang} text={() => tx(lang, `Kansaneläke ${$(k.kansanelake)} + takuueläke ${$(k.takuuelake)} (työeläke ${$(tyoelake)})`, `National pension ${$(k.kansanelake)} + guarantee ${$(k.takuuelake)} (work pension ${$(tyoelake)})`)} />

@@ -43,7 +43,7 @@ export default function AnsiopaivarahaLaskuri({ lang = 'fi', methodHref }: { lan
           <NumberField id="ap-ika" label={tx(lang, 'Ikä työttömäksi jäädessä', 'Age when unemployed')} value={ika} onChange={setIka} unit={tx(lang, 'v', 'yrs')} max={70} lang={lang} />
           <KuntaKentta lang={lang} id="ap-kunta" value={kunta} onChange={setKunta} />
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Ansiopäiväraha kuukaudessa, brutto', 'Earnings-related allowance per month, gross')} wert={$(a.taysiKk)}
             unter={tx(lang, `${$(a.taysiPv, 2)} päivässä, 5 päivää viikossa · yleistuki olisi ${$(yleistukiKk())}`, `${$(a.taysiPv, 2)} per day, 5 days a week · yleistuki would be ${$(yleistukiKk())}`)} />
           <Laskelma rows={rivit} />

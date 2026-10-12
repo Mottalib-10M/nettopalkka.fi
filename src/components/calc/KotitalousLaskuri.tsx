@@ -35,7 +35,7 @@ export default function KotitalousLaskuri({ lang = 'fi', methodHref }: { lang?: 
             help={tx(lang, 'Palkka ja työnantajan sivukulut.', 'Wages plus employer contributions.')} />
           <Toggle id="kt-h" label={tx(lang, 'Vähennyksen saajat', 'People claiming')} value={kaksi} onChange={setKaksi} options={[{ value: '1', label: tx(lang, 'Yksi', 'One') }, { value: '2', label: tx(lang, 'Puolisot', 'Spouses') }]} />
         </form>
-        <div className={kasten} aria-live="polite">
+        <div className={kasten} aria-live="polite" data-resultat>
           <Paaluku label={tx(lang, 'Kotitalousvähennys 2026', 'Household tax credit 2026')} wert={$(v.vahennys)}
             unter={tx(lang, `Esityksen mukaan ${$(e.vahennys)}: ei vielä laki`, `Under the proposal ${$(e.vahennys)}: not yet law`)} />
           <Laskelma rows={rivit} />
