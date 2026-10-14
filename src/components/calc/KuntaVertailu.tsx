@@ -25,7 +25,7 @@ export default function KuntaVertailu({ lang = 'fi', methodHref }: { lang?: L; m
     <div className={rahmen} data-chrome>
       <div className="siniristi h-1" aria-hidden="true" />
       <div className="p-4 sm:p-6">
-        <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-3">
+        <form onSubmit={(e) => e.preventDefault()} className="grid content-start grid-cols-1 gap-x-4 gap-y-4 sm:grid-cols-3">
           <NumberField id="kv-palkka" label={tx(lang, 'Bruttopalkka kuukaudessa', 'Gross salary per month')} value={palkka} onChange={setPalkka} unit="€" max={200000} lang={lang} />
           <div className="grid grid-rows-subgrid row-span-3 content-start gap-y-0">
             <label htmlFor="kv-haku" className="mb-1 block text-sm font-medium text-navy-700">{tx(lang, 'Hae kuntaa', 'Find a municipality')}</label>
