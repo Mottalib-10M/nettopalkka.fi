@@ -45,7 +45,7 @@ const miniHref = ROUTES.some((r) => r.id === cible) ? route(cible, lang) : undef
 const preset = (page.toolPreset ?? {}) as Record<string, never>;
 const palkkaPreset = typeof page.toolPreset?.palkka === 'number' ? page.toolPreset.palkka : undefined;
 ---
-<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} related={related} sources={sources} breadcrumbs={[{ label: x.nav }]}>
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} related={related} sources={sources} breadcrumbs={[{ label: x.nav }]} dateEnHaut={!page.tool && !page.mini} anneeEnHaut={!/20\d\d/.test(x.h1 + x.intro)}>
   <article>
     <header class="mb-3">
       <h1 class="text-[1.75rem] font-bold text-navy-900 max-sm:leading-tight sm:text-3xl md:text-4xl">{x.h1}</h1>
