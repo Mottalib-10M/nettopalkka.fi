@@ -1,16 +1,23 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import { CONTACT_EMAIL, LAST_UPDATED } from '../../data/site-config';
+import { CONTACT_EMAIL, GA4_ID, LAST_UPDATED } from '../../data/site-config';
 import { route } from '../../i18n/routes';
 const lang = 'fi';
 ---
-<PageLayout title="Evästeet: Nettopalkka ei aseta yhtään evästettä" description="Nettopalkka-, vero-, eläke- ja Kela-laskurit eivät aseta evästeitä eivätkä tallenna sinusta mitään. Sivuston vakautta seurataan nimettömästi Microsoft Claritylla ilman evästeitä." lang={lang} noindex={true} breadcrumbs={[{ label: 'Evästeet' }]} showAuthor={false}>
+<PageLayout title="Evästeet: vain Google Analyticsin kävijämittaus" description="Nettopalkka asettaa vain Google Analyticsin kävijämittausevästeet, enintään 13 kuukaudeksi ja ilman mainontaa. Näin vastustat niitä; vakautta seurataan ilman evästeitä." lang={lang} noindex={true} breadcrumbs={[{ label: 'Evästeet' }]} showAuthor={false}>
   <div class="prose prose-slate max-w-none">
     <h1>Evästeet</h1>
     <p>Täydentää <a href={route('privacy', lang)}>tietosuojaselostetta</a>.</p>
-    <h2>Ei evästeitä</h2><p>Sivusto ei aseta evästeitä millään sivulla, eivätkä laskurit tallenna laitteellesi mitään: palkka, kotikunta ja muut syötteet pysyvät avoimella sivulla ja katoavat, kun suljet sen. Siksi sivustolla ei ole evästebanneria: hyväksyttävää ei ole.</p>
+    <h2>Asetettavat evästeet</h2><p>Sivusto asettaa Google Analyticsin kävijämittausevästeet ja vain ne, ei mainos- eikä sosiaalisen median evästeitä.</p>
+    <table><thead><tr><th>Nimi</th><th>Palveluntarjoaja</th><th>Tarkoitus</th><th>Voimassaolo</th></tr></thead><tbody>
+    <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Erottaa kävijät toisistaan satunnaisella tunnisteella</td><td>Enintään 13 kuukautta (390 päivää)</td></tr>
+    <tr><td><code>_ga_{GA4_ID.replace('G-', '')}</code></td><td>Google Analytics</td><td>Säilyttää meneillään olevan käynnin tilan</td><td>Enintään 13 kuukautta (390 päivää)</td></tr>
+    </tbody></table>
+    <p>Voimassaoloa ei pidennetä jokaisella käynnillä; Googlen oletus on 2 vuotta, ja sivusto lyhentää sitä. Tarkoitus: kävijämittaus (katsotut sivut, viittaava sivu, laite, likimääräinen maa). IP-osoite anonymisoidaan: Google Analytics 4 ei kirjaa eikä tallenna sitä. Ei mainontaa eikä tietojen jakamista mainostajille: mainosten tallennus, personointi ja Google-signaalit on kytketty pois.</p>
+    <p>Palveluntarjoaja: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlanti. Tietoja voidaan siirtää Google LLC:lle Yhdysvaltoihin EU–Yhdysvallat-tietosuojakehyksen ja Euroopan komission vakiolausekkeiden perusteella. Säilytys Googlella: 14 kuukautta. Peruste: julkaisijan oikeutettu etu (GDPR 6 artiklan 1 kohdan f alakohta).</p>
+    <h2>Syötteesi</h2><p>Laskurit eivät tallenna laitteellesi mitään: palkka, kotikunta ja muut syötteet pysyvät avoimella sivulla ja katoavat, kun suljet sen.</p>
     <h2>Vakauden nimetön seuranta</h2><p>Rikkinäisten sivujen, skriptivirheiden, hitaiden latausten ja toimimattomien painikkeiden havaitsemiseksi sivusto lataa Microsoft Clarityn evästeettömässä tilassa. Clarity ei silloin aseta evästeitä (ei <code>_clck</code>, <code>_clsk</code>, <code>MUID</code> eikä <code>CLID</code>), antaa jokaiselle sivunlataukselle oman kertakäyttöisen tunnisteen eikä yhdistä käyntejäsi toisiinsa. Sivujen sisältö ja syötteet peitetään ennen kuin mitään lähetetään.</p>
-    <h2>Estäminen</h2><p>Jos et halua tätäkään mittausta, estä verkkotunnus clarity.ms tai käytä sisällönestoa; laskurit toimivat täsmälleen samoin.</p>
+    <h2>Vastustaminen</h2><p>Estä tai poista evästeet selaimesi asetuksista tai asenna <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">Google Analyticsin estävä selainlisäosa</a>. Clarityn mittauksen voit estää verkkotunnuksen clarity.ms estolla tai sisällönestolla. Laskurit toimivat täsmälleen samoin.</p>
     <p>Kysymykset: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Päivitetty {LAST_UPDATED}.</p>
   </div>
 </PageLayout>
